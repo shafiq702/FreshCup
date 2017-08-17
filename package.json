@@ -1,0 +1,45 @@
+{
+  "name": "freshcup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shafiq Marediya",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "~1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-less": "^1.4.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-keepalive": "^1.0.0",
+    "grunt-processhtml": "^0.4.1"
+  },
+  "dependencies": {
+    "angular-card": "^0.3.7",
+    "angular-marked": "^1.2.2",
+    "angular-md": "^1.0.0",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.17.1",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "dateformat": "^2.0.0",
+    "express": "^4.15.2",
+    "express-session": "^1.15.2",
+    "grunt-express": "^1.4.1",
+    "grunt-parallel": "^0.5.1",
+    "highlight": "^0.2.4",
+    "marked": "^0.3.6",
+    "mongoose": "^4.9.2",
+    "morgan": "^1.8.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "serve-favicon": "^2.4.2",
+    "superagent": "^3.5.2"
+  }
+}

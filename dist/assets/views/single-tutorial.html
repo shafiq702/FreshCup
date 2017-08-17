@@ -1,0 +1,66 @@
+<main id="main-container" style="min-height: 426px;">
+                <!-- Hero Content -->
+                <div>
+                    <div class="bg-primary-op">
+                        <section class="content content-full content-boxed overflow-hidden">
+                            <!-- Section Content -->
+                            <div class="push-150-t push-150 text-center">
+                                <h1 class="text-white push-10 animated fadeInDown" data-toggle="appear" data-class="animated fadeInDown">{{post.articleTitle}}</h1>
+                            </div>
+                            <!-- END Section Content -->
+                        </section>
+                    </div>
+                </div>
+                <!-- END Hero Content -->
+                <div class="bg-white" ng-show="post.articleVideo">
+                    <section class="content content-boxed">
+                        <!-- Section Content -->
+                        <div class="row push-50-t push-50 nice-copy-story">
+                            <div class="col-sm-8 col-sm-offset-2">
+                              <iframe width="854" height="480" ng-src="{{post.articleVideo}}" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <!-- END Section Content -->
+                    </section>
+                </div>
+                <!-- Story Content -->
+                <div class="bg-white">
+                    <section class="content content-boxed">
+                        <!-- Section Content -->
+                        <div class="text-center">
+                            <a class="link-effect font-s13 font-w600">{{post.author}}</a> on {{post.time}}
+                        </div>
+                        <div class="row push-50-t push-50 nice-copy-story">
+                            <div class="col-sm-8 col-sm-offset-2">
+                              <md ng-model="post.articleBody" class="ng-pristine ng-valid"></md>
+                                <!-- Actions -->
+                                <div class="push-50-t clearfix">
+                                    <div class="btn-toolbar pull-right">
+                                        <div class="btn-group dropup">
+                                            <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)"><i class="fa fa-share-alt"></i> Social Share</a>
+                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                <li>
+                                                    <a tabindex="-1" href="https://www.facebook.com/sharer/sharer.php?u=www.blog.k2datascience.com/{{pagePath}}"><i class="fa fa-fw fa-facebook pull-right"></i> Facebook</a>
+                                                </li>
+                                                <li>
+                                                    <a tabindex="-1" href="https://twitter.com/home?status=www.blog.k2datascience.com/{{pagePath}}"><i class="fa fa-fw fa-twitter pull-right"></i> Twitter</a>
+                                                </li>
+                                                <li>
+                                                    <a tabindex="-1" href="https://plus.google.com/share?url=www.k2datascience.com/{{pagePath}}"><i class="fa fa-fw fa-google-plus pull-right"></i> Google+</a>
+                                                </li>
+                                                <li>
+                                                    <a tabindex="-1" href="https://www.linkedin.com/shareArticle?mini=true&url=www.blog.k2datascience.com&title={{post.articleTitle}}&summary=&source="><i class="fa fa-fw fa-linkedin pull-right"></i> LinkedIn</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <a class="btn btn-success" href="mailto:?Subject=Check%20This%20Out&body=Hi,I found this blog and thought you might like it http://www.blog.k2datascience.com/" target="_top">Email To A Friend</a>
+                                </div>
+                                <!-- END Actions -->
+                            </div>
+                        </div>
+                        <!-- END Section Content -->
+                    </section>
+                </div>
+                <!-- END Story Content -->
+            </main>

@@ -1,0 +1,62 @@
+<div class="bg-primary-lighter collapse navbar-collapse remove-padding" id="sub-header-nav">
+    <div class="content-mini content-boxed">
+      <sub-header></sub-header>
+    </div>
+</div>
+<!-- Page Header -->
+<div class="content bg-gray-lighter">
+    <div class="row items-push">
+      <div class="col-sm-12">
+            <div class="form-material">
+                <input class="form-control input-lg" type="text" id="material-text" name="material-text" placeholder="Enter Blog Title" ng-model="post.articleTitle">
+                <label for="material-text">Blog Title</label>
+            </div>
+            <div class="form-material">
+                <input class="form-control input-lg" type="text" id="material-text" name="material-text" placeholder="Enter Blog Title" ng-model="post.articleImage">
+                <label for="material-text">Image URL</label>
+            </div>
+            <div class="form-material">
+                <input class="form-control input-lg" type="text" id="material-text" name="material-text" placeholder="Enter Blog Title" ng-model="post.articleVideo">
+                <label for="material-text">Video URL</label>
+            </div>
+            <div class="form-material">
+              <select ng-model="post.articleType">
+                <option ng-repeat="articleType in articleTypes" value="{{articleType}}">{{articleType}}</option>
+              </select>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Page Header -->
+
+<!-- Page Content -->
+<div class="content content-narrow">
+
+
+    <!-- SimpleMDE Editor (data-js-simplemde attribute is initialized in js/directives.js) -->
+    <!-- For more info and examples you can check out https://github.com/NextStepWebs/simplemde-markdown-editor -->
+    <h2 class="content-heading">SimpleMDE</h2>
+    <div class="block">
+        <div class="block-header">
+          <div class="col-md-6">
+            <h3 class="block-title">Markdown Editor</h3>
+          </div>
+          <div class="col-md-6 text-right">
+            <button type="button" class="btn btn-rounded btn-warning" ng-click="saveDraft()">Save Draft</button>
+            <button type="button" class="btn btn-rounded btn-success" ng-click="publishPost()">Publish Post</button>
+          </div>
+        </div>
+        <div class="block-content">
+            <form class="form-horizontal" ng-model="data">
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <!-- SimpleMDE Container -->
+                        <textarea data-js-simplemde id="simplemde" name="simplemde"></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- END SimpleMDE Editor -->
+</div>
+<!-- END Page Content -->

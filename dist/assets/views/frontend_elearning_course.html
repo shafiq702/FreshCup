@@ -1,0 +1,145 @@
+
+<!-- Main Container -->
+<main id="main-container">
+    <!-- Hero Content -->
+    <div class="bg-image" style="background-image: url('assets/img/various/promo-code.png');">
+        <div class="bg-primary-dark-op">
+            <section class="content content-full content-boxed">
+                <!-- Section Content -->
+                <div class="push-100-t push-50 text-center">
+                    <h1 class="h2 text-white push-10" data-toggle="appear" data-class="animated fadeInDown">{{course.title}}</h1>
+                    <h2 class="h4 text-white-op" data-toggle="appear" data-class="animated fadeInDown">{{units.length}} Modules &bull; {{course.length}} hours</h2>
+                </div>
+                <!-- END Section Content -->
+            </section>
+        </div>
+    </div>
+    <!-- END Hero Content -->
+
+    <!-- Navigation -->
+    <div class="bg-white">
+        <section class="content content-mini content-mini-full content-boxed overflow-hidden">
+            <ol class="breadcrumb">
+                <li><a class="text-primary-dark" ui-sref="courses">Courses</a></li>
+                <li><a>{{course.title}}</a></li>
+            </ol>
+        </section>
+    </div>
+    <!-- END Navigation -->
+
+    <!-- Lessons -->
+    <section class="content content-boxed overflow-hidden">
+        <!-- Section Content -->
+        <div class="row">
+            <div class="col-md-8">
+                <!-- Lessons -->
+                <div class="block block-rounded">
+                    <div class="block-content">
+                        <!-- Introduction -->
+                        <table class="table table-borderless table-vcenter" ng-repeat="unit in units track by $index">
+                            <tbody>
+                                <tr class="active">
+                                    <th style="width: 50px;"></th>
+                                    <th>{{unit.order}}. {{unit.title}}</th>
+                                    <th class="font-s12 text-right">
+                                        <!-- <span class="text-muted">0.2 hours</span> -->
+                                    </th>
+                                </tr>
+                                <tr ng-repeat="lesson in unit.lessons track by $index">
+                                    <td class=" text-center" ng-show="$index !==0">
+                                        <!-- <i class="fa fa-fw fa-lock text-danger"></i> -->
+                                    </td>
+                                    <td class=" text-center" ng-show="$index ===0">
+                                        <!-- <i class="fa fa-fw fa-unlock text-success"></i> -->
+                                    </td>
+                                    <td>
+                                        <a ui-sref="lesson">{{unit.order}}.{{lesson.lesson.order}} {{lesson.lesson.title}}</a>
+                                    </td>
+                                    <td class="text-right">
+                                        <!-- <em class="font-s12 text-muted">12 min</em> -->
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- END Introduction -->
+                    </div>
+                </div>
+                <!-- END Lessons -->
+            </div>
+            <div class="col-md-4">
+                <!-- Subscribe -->
+                <div class="block block-rounded">
+                    <div class="block-content">
+                        <a class="btn btn-block btn-rounded btn-noborder btn-success push-10" href="{{course.link}}">View Course</a>
+                        <!-- <p class="text-center">or <a class="link-effect" href="javascript:void(0)">buy this course for $4</a></p> -->
+                    </div>
+                </div>
+                <!-- END Subscribe -->
+
+                <!-- Course Info -->
+                <div class="block block-rounded">
+                    <div class="block-header bg-gray-lighter text-center">
+                        <h3 class="block-title">About This Course</h3>
+                    </div>
+                    <div class="block-content">
+                        <table class="table table-borderless table-condensed">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-fw fa-book push-10-r"></i> {{units.length}} Modules
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-fw fa-clock-o push-10-r"></i> {{course.length}} hours
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-fw fa-heart push-10-r"></i> {{course.favorites}} Favorites
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-fw fa-star push-10-r"></i> {{course.rating}} stars
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- END Course Info -->
+
+                <!-- About Instructor -->
+                <!-- <a class="block block-rounded block-link-hover3" href="javascript:void(0)">
+                    <div class="block-header bg-gray-lighter text-center">
+                        <h3 class="block-title">About The Instructor</h3>
+                    </div>
+                    <div class="block-content block-content-full text-center">
+                        <div class="push">
+                            <img class="img-avatar" src="assets/img/avatars/avatar12.jpg" alt="">
+                        </div>
+                        <div class="font-w600 push-5">Shafiq Marediya</div>
+                        <div class="text-muted">Data Scientist</div>
+                    </div>
+                </a> -->
+                <!-- END About Instructor -->
+            </div>
+        </div>
+        <!-- END Section Content -->
+    </section>
+    <!-- END Lessons -->
+
+    <!-- Get Started -->
+    <!-- <div class="bg-gray-lighter">
+        <section class="content content-full content-boxed">
+            <div class="push-20-t push-20 text-center">
+                <h3 class="h4 push-20" data-toggle="appear">Subscribe today and learn HTML5 in under 3 hours.</h3>
+                <a class="btn btn-rounded btn-noborder btn-lg btn-success" data-toggle="appear" data-class="animated bounceIn" href="javascript:void(0)">Subscribe from $9/month</a>
+            </div>
+
+        </section>
+    </div> -->
+    <!-- END Get Started -->
+</main>
+<!-- END Main Container -->

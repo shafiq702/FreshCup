@@ -1,0 +1,33 @@
+<!-- Page Content -->
+<main id="main-container" style="min-height: 372px;">
+    <div class="bg-image" style="background-image: url('assets/img/photos/photo24@2x.jpg');">
+        <div class="bg-primary-dark-op">
+            <section class="content content-full content-boxed overflow-hidden">
+                <div class="push-100-t push-50 text-center">
+                    <h1 class="h2 text-white push-10 animated fadeInDown" data-toggle="appear" data-class="animated fadeInDown">Data Analysis Tutorials</h1>
+                    <h1 class="h2 text-white push-10 animated fadeInDown" data-toggle="appear" data-class="animated fadeInDown">Follow data science related tutorials</h1>
+                    <h2 class="h5 text-white-op animated fadeInDown" data-toggle="appear" data-class="animated fadeInDown">Learn by doing.</h2>
+                </div>
+            </section>
+        </div>
+    </div>
+    <section class="content content-boxed">
+        <div class="push-50-t push-50">
+            <div class="row">
+                <div class="col-md-4 animated fadeIn" data-toggle="appear" data-offset="50" data-class="animated fadeIn" ng-repeat="post in posts">
+                    <a class="block block-link-hover2" ui-sref="singleTutorial({postId: post._id})">
+                        <img class="img-responsive" src="{{post.articleImage}}" alt="">
+                        <div class="block-content">
+                            <div class="font-s12 push">
+                                <span class="text-primary">{{post.author}}</span> on {{post.time}}
+                            </div>
+                            <h4 class="push-10">{{post.articleTitle}}</h4>
+                            <p>{{post.preview}}...</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- END Page Content -->

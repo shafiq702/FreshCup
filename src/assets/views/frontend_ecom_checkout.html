@@ -1,0 +1,207 @@
+
+<!-- Main Container -->
+<main id="main-container">
+    <!-- Checkout Content -->
+    <section class="content content-boxed">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <!-- Card plugin (.js-card-form and .js-card-container are initialized at the bottom of the page) -->
+                <!-- For more info and examples you can check out https://github.com/jessepollak/card -->
+                <form class="js-card-form form-horizontal" onsubmit="return false;">
+                    <!-- Products -->
+                    <div class="block">
+                        <div class="block-header">
+                            <h3 class="block-title">1. Products</h3>
+                        </div>
+                        <div class="block-content">
+                            <table class="table table-borderless table-vcenter">
+                                <tbody>
+                                    <tr>
+                                        <td style="max-width: 55px;" class="text-center">
+                                        </td>
+                                        <td>
+                                            <div class="font-w600">Product Name</div>
+                                        </td>
+                                        <td class="text-center" style="max-width: 140px;">
+                                            <div class="font-w600">Quantity</div>
+                                        </td>
+                                        <td class="text-right">
+                                            <div class="font-w600">Price</div>
+                                        </td>
+                                    </tr>
+                                    <tr ng-repeat="product in products">
+                                        <td style="max-width: 55px;" class="text-center">
+                                            <a class="text-danger" href="javascript:void(0)" ng-click="removeItem(product)"><i class="fa fa-times"></i></a>
+                                        </td>
+                                        <td>
+                                            <a class="h5" href="frontend_ecom_product.html">{{product.title}}</a>
+                                        </td>
+                                        <td class="text-center" style="max-width: 140px;">
+                                            <!-- <div class="font-w600 text-success">{{product.quantity}}</div> -->
+                                            <div class="btn-group btn-group-justified">
+                                                <div class="btn-group">
+                                                    <button class="btn btn-default" type="button" ng-click="decreaseQuantity(product)"><i class="fa fa-minus"></i></button>
+                                                </div>
+                                                <div class="btn-group">
+                                                    <div class="font-w600 text-success">{{product.quantity}}</div>
+                                                </div>
+                                                <div class="btn-group">
+                                                    <button class="btn btn-default" type="button" ng-click="increaseQuantity(product)"><i class="fa fa-plus"></i></button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-right">
+                                            <div class="font-w600 text-success">{{product.price * product.quantity}}</div>
+                                        </td>
+                                    </tr>
+                                    <tr class="success">
+                                        <td class="text-right" colspan="3">
+                                          <i class="btn fa fa-refresh push-5-r" ng-click="totalPrice()"></i>
+                                          <span class="h4 font-w600">Total</span>
+                                        </td>
+                                        <td class="text-right">
+                                            <div class="h4 font-w600 text-success">${{total}}</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- END Products -->
+
+                    <!-- Create Account -->
+                    <div class="block">
+                        <div class="block-header">
+                            <h3 class="block-title">2. Create Account</h3>
+                        </div>
+                        <div class="block-content">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <!-- <div class="form-group">
+                                        <div class="col-xs-12">
+                                            <div class="form-material floating">
+                                                <input class="form-control" id="checkout-username" name="checkout-username" type="text">
+                                                <label for="checkout-username">Username</label>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                    <div class="form-group">
+                                        <div class="col-xs-12">
+                                            <div class="form-material floating">
+                                                <input class="form-control" id="checkout-email" name="checkout-email" type="email" ng-model="user.email">
+                                                <label for="checkout-email">Email</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-xs-12">
+                                            <div class="form-material floating">
+                                                <input class="form-control" id="checkout-password" name="checkout-password" type="password" ng-model="user.password">
+                                                <label for="checkout-password">Password</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-xs-12">
+                                            <div class="form-material floating">
+                                                <input class="form-control" id="checkout-password2" name="checkout-password2" type="password" ng-model="user.confirmPassword">
+                                                <label for="checkout-password2">Confirm Password</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="col-xs-12">
+                                            <div class="form-material floating">
+                                                <input class="form-control" id="checkout-firstname" name="checkout-firstname" type="text" ng-model="user.firstName">
+                                                <label for="checkout-firstname">Firstname</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-xs-12">
+                                            <div class="form-material floating">
+                                                <input class="form-control" id="checkout-lastname" name="checkout-lastname" type="text" ng-model="user.lastName">
+                                                <label for="checkout-lastname">Lastname</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="form-group">
+                                        <div class="col-xs-12">
+                                            <div class="form-material floating">
+                                                <input class="form-control" id="checkout-country" name="checkout-country" type="text">
+                                                <label for="checkout-country">Country</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-xs-12">
+                                            <div class="form-material floating">
+                                                <input class="form-control" id="checkout-city" name="checkout-city" type="text">
+                                                <label for="checkout-city">City</label>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END Create Account -->
+
+                    <!-- Credit Card -->
+                    <div class="block">
+                        <div class="block-header">
+                            <h3 class="block-title">3. Credit Card</h3>
+                        </div>
+                        <div class="block-content">
+                            <div class="js-card-container credit-card hidden-xs push-50"></div>
+                            <div class="row">
+                                <div class="col-sm-6 col-sm-offset-3">
+                                    <div class="form-group">
+                                        <div class="col-xs-12">
+                                            <div class="form-material">
+                                                <input class="form-control" id="checkout-cc-number" name="checkout-cc-number" type="text" placeholder="**** **** **** ****" ng-model="card.number">
+                                                <label for="checkout-cc-number">Number</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-xs-12">
+                                            <div class="form-material">
+                                                <input class="form-control" id="checkout-cc-name" name="checkout-cc-name" type="text" placeholder="JOHN DOE" ng-model="card.fullName">
+                                                <label for="checkout-cc-name">Full Name</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-xs-6">
+                                            <div class="form-material">
+                                                <input class="form-control" id="checkout-cc-expiry" name="checkout-cc-expiry" type="text" placeholder="01/2019" ng-model="card.date">
+                                                <label for="checkout-cc-expiry">MM/YYYY</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <div class="form-material">
+                                                <input class="form-control" id="checkout-cc-cvc" name="checkout-cc-cvc" type="text" placeholder="***" ng-model="card.cvc">
+                                                <label for="checkout-cc-cvc">CVC</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-xs-12 text-center">
+                                            <button class="btn btn-primary" type="submit" ng-click="completeOrder(products,user,card)"><i class="fa fa-check push-5-r"></i> Complete Order</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END Credit Card -->
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- END Checkout Content -->
+</main>
+<!-- END Main Container -->

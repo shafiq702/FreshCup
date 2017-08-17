@@ -1,0 +1,26 @@
+<!-- Main Container -->
+<main id="main-container">
+    <!-- END Instructors -->
+    <div class="bg-white">
+        <section class="content content-boxed">
+          <h2 class="text-center">Courses</h2>
+            <!-- Section Content -->
+            <div class="row items-push-3x push-50-t nice-copy">
+              <div class="col-lg-4" ng-repeat="course in courses track by $index">
+                <div class="block border" ui-sref="singleCourse({courseId: course._id})">
+                  <img class="img-responsive" src="{{course.image}}" alt="">
+                  <div class="block-content">
+                    <div class="push-10">
+                    <div class="h4 font-w600 text-success pull-right push-10-l">${{course.price}}</div>
+                    <a class="h4" href="javascript:void(0)">{{course.title}}</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- END Section Content -->
+        </section>
+    </div>
+
+</main>
+<!-- END Main Container -->

@@ -1,0 +1,61 @@
+<!-- Sub Header -->
+<div class="bg-gray-lighter visible-xs">
+    <div class="content-mini content-boxed">
+        <button class="btn btn-block btn-default visible-xs push" data-toggle="collapse" data-target="#sub-header-nav">
+            <i class="fa fa-navicon push-5-r"></i>Menu
+        </button>
+    </div>
+</div>
+<div class="bg-primary-lighter collapse navbar-collapse remove-padding" id="sub-header-nav">
+    <div class="content-mini content-boxed">
+        <sub-header></sub-header>
+    </div>
+</div>
+<!-- END Sub Header -->
+<!-- Page Content -->
+<div class="content">
+    <!-- Dynamic Table Full -->
+    <div class="block">
+        <div class="block-header">
+            <h3 class="block-title">Dynamic Table <small>Full</small></h3>
+            <ul class="block-options">
+                <li>
+                    <button type="button" ui-sref="tutorialEditors"><i class="fa fa-plus"></i> Post</button>
+                </li>
+            </ul>
+        </div>
+        <div class="block-content">
+            <!-- DataTables init on table by adding .js-dataTable-full class, functionality initialized in js/controllers.js -> TablesDatatablesCtrl Controller-->
+            <table class="table table-bordered table-striped js-dataTable-full">
+                <thead>
+                    <tr>
+                        <th class="text-center"></th>
+                        <th>Title</th>
+                        <th class="hidden-xs">Date</th>
+                        <th class="hidden-xs">Article Type</th>
+                        <th class="hidden-xs" style="width: 15%;">Is Draft</th>
+                        <th class="text-center" style="width: 10%;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="post in posts track by $index">
+                      <td class="text-center">{{$index+1}}</td>
+                        <td class="font-w600">{{post.articleTitle}}</td>
+                        <td class="hidden-xs">{{post.time}}</td>
+                        <td class="hidden-xs">{{post.articleType}}</td>
+                        <td class="hidden-xs">
+                            <span class="label label-danger" ng-show="post.isDraft">{{post.isDraft}}</span>
+                        </td>
+                        <td class="text-center">
+                            <div class="btn-group">
+                                <button class="btn btn-xs btn-default" type="button" ui-sref="tutorialEditorsUpdate({postId: post._id})"><i class="fa fa-pencil"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- END Dynamic Table Full -->
+</div>
+<!-- END Page Content -->

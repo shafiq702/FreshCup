@@ -1,0 +1,64 @@
+<main id="main-container" style="min-height: 648px;">
+  <div class="bg-primary-lighter collapse navbar-collapse remove-padding" id="sub-header-nav">
+      <div class="content-mini content-boxed">
+        <sub-header></sub-header>
+      </div>
+  </div>
+    <!-- Page Content -->
+    <div class="content content-narrow">
+        <!-- Material Design -->
+        <h2 class="content-heading">Lessons</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Static Labels -->
+                <div class="block">
+                    <div class="block-header">
+                        <h3 class="block-title">Update Lesson</h3>
+                    </div>
+                    <div class="block-content block-content-narrow">
+                        <form class="form-horizontal push-10-t">
+                            <div class="form-group">
+                                <div class="col-sm-9">
+                                    <div class="form-material">
+                                        <input class="form-control" type="text" id="material-text" name="material-text" placeholder="Please enter title" ng-model="lesson.title">
+                                        <label for="material-text">Title</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-9">
+                                    <div class="form-material">
+                                        <input class="form-control" type="number" id="material-number" name="material-number" placeholder="Please enter order number" ng-model="lesson.order">
+                                        <label for="material-number">Order Number</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-9">
+                                    <div class="form-material">
+                                        <input class="form-control" type="text" id="material-text" name="material-text" placeholder="Please enter Video URL" ng-model="lesson.video">
+                                        <label for="material-text">Video</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material">
+                                        <textarea class="form-control" id="material-textarea-large" name="material-textarea-large" rows="8" placeholder="Please add a lesson summary" ng-model="lesson.content"></textarea>
+                                        <label for="material-textarea-large">Content</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-9">
+                                    <button class="btn btn-sm btn-primary" type="click" ng-click="updateLesson(lesson)">Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- END Static Labels -->
+            </div>
+    </div>
+    <!-- END Page Content -->
+</main>

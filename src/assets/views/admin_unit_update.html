@@ -1,0 +1,48 @@
+<main id="main-container" style="min-height: 648px;">
+  <div class="bg-primary-lighter collapse navbar-collapse remove-padding" id="sub-header-nav">
+      <div class="content-mini content-boxed">
+        <sub-header></sub-header>
+      </div>
+  </div>
+    <!-- Page Content -->
+    <div class="content content-narrow">
+        <!-- Material Design -->
+        <h2 class="content-heading">Units</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Static Labels -->
+                <div class="block">
+                    <div class="block-header">
+                        <h3 class="block-title">Add New Unit</h3>
+                    </div>
+                    <div class="block-content block-content-narrow">
+                        <form class="form-horizontal push-10-t">
+                            <div class="form-group">
+                                <div class="col-sm-9">
+                                    <div class="form-material">
+                                        <input class="form-control" type="text" id="material-text" name="material-text" placeholder="Please enter title" ng-model="unit.title">
+                                        <label for="material-text">Title</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-9">
+                                    <div class="form-material">
+                                        <input class="form-control" type="number" id="material-number" name="material-number" placeholder="Please enter order number" ng-model="unit.order">
+                                        <label for="material-number">Order Number</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-9">
+                                    <button class="btn btn-sm btn-primary" type="click" ng-click="updateUnit(unit)">Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- END Static Labels -->
+            </div>
+    </div>
+    <!-- END Page Content -->
+</main>

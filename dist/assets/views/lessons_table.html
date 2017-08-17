@@ -1,0 +1,95 @@
+<div class="bg-primary-lighter collapse navbar-collapse remove-padding" id="sub-header-nav">
+    <div class="content-mini content-boxed">
+      <ul class="nav nav-pills nav-sub-header push">
+          <li>
+              <a ui-sref="dashboard">
+                  <i class="fa fa-dashboard push-5-r"></i>Dashboard
+              </a>
+          </li>
+          <li class="active">
+              <a ui-sref="adminCourses">
+                  <i class="fa fa-university push-5-r"></i>Courses
+              </a>
+          </li>
+          <li>
+              <a ui-sref="adminProducts">
+                  <i class="fa fa-briefcase push-5-r"></i>Products
+              </a>
+          </li>
+          <li>
+              <a ui-sref="adminCustomers">
+                  <i class="fa fa-users push-5-r"></i>Customers
+              </a>
+          </li>
+          <li>
+              <a ui-sref="bd_sales.html">
+                  <i class="fa fa-paypal push-5-r"></i>Sales
+              </a>
+          </li>
+          <li>
+              <a ui-sref="bd_settings.html">
+                  <i class="fa fa-cog push-5-r"></i>Settings
+              </a>
+          </li>
+          <li class="dropdown">
+              <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-coffee push-5-r"></i>More <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                  <li>
+                      <a href="javascript:void(0)">Payment</a>
+                  </li>
+                  <li>
+                      <a href="javascript:void(0)">Privacy</a>
+                  </li>
+                  <li role="separator" class="divider"></li>
+                  <li>
+                      <a href="javascript:void(0)">Shop</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+    </div>
+</div>
+<!-- Page Content -->
+<div class="content">
+    <!-- Dynamic Table Full -->
+    <div class="block">
+        <div class="block-header">
+            <h3 class="block-title">Lessons Table <small>Full</small></h3>
+            <ul class="block-options">
+                <li>
+                    <button type="button" ui-sref="adminAddLessons({unitId: unitId})"><i class="fa fa-plus"></i> Lesson</button>
+                </li>
+            </ul>
+        </div>
+        <div class="block-content">
+            <!-- DataTables init on table by adding .js-dataTable-full class, functionality initialized in js/controllers.js -> TablesDatatablesCtrl Controller-->
+            <table class="table table-bordered table-striped js-dataTable-full">
+                <thead>
+                    <tr>
+                        <th class="text-center">Order</th>
+                        <th style="width: 60%;">Title</th>
+                        <th class="text-center" style="width: 20%;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="lesson in lessons track by $index">
+                      <td class="text-center">{{$index+1}}</td>
+                        <td class="font-w600">{{lesson.title}}</td>
+                        <td class="text-center">
+                            <div class="btn-group">
+                                <button class="btn btn-xs btn-default" type="button" ui-sref="adminUpdateLessons({lessonId: lesson._id})"><i class="fa fa-pencil"></i> Edit</button>
+                            </div>
+                            <div class="btn-group">
+                                <button class="btn btn-xs btn-danger" type="button" ng-click="deletelesson(lesson._id)"><i class="fa fa-times"></i> Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- END Dynamic Table Full -->
+</div>
+<!-- END Page Content -->

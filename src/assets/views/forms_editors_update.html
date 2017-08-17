@@ -1,0 +1,44 @@
+<!-- Page Header -->
+<div class="content bg-gray-lighter">
+    <div class="row items-push">
+      <div class="col-sm-12">
+        <div class="form-material">
+            <input class="form-control input-lg" type="text" id="material-text" name="material-text" placeholder="Enter Blog Title" ng-model="post.articleTitle">
+            <label for="material-text">Blog Title</label>
+        </div>
+          <br>
+        <div class="form-material">
+            <input class="form-control input-lg" type="text" id="material-text" name="material-text" placeholder="Enter Video URL" ng-model="post.articleVideo">
+            <label for="material-text">Video URL</label>
+        </div>
+          <br>
+        <div class="form-material">
+            <input class="form-control input-lg" type="text" id="material-text" name="material-text" placeholder="Enter Blog Title" ng-model="post.articleImage">
+            <label for="material-text">Image URL</label>
+        </div>
+        </div>
+    </div>
+</div>
+<!-- END Page Header -->
+
+
+<!-- Page Content -->
+<div class="content content-narrow">
+    <div class="block">
+        <div class="block-header">
+            <div class="col-md-6">
+                <h3 class="block-title">Blog Post Body</h3>
+            </div>
+            <div class="col-md-6 text-right">
+                <button type="button" class="btn btn-rounded btn-danger" ng-click="deletePost(post._id)">Delete</button>
+                <button type="button" class="btn btn-rounded btn-warning" ng-click="updateDraft()">Save Draft</button>
+                <button type="button" class="btn btn-rounded btn-success" ng-click="updatePost()">Publish Post</button>
+            </div>
+        </div>
+        <div class="block-content block-content-full">
+            <div data-js-summernote="{airMode: false}"></div>
+        </div>
+    </div>
+    <!-- END SimpleMDE Editor -->
+</div>
+<!-- END Page Content -->

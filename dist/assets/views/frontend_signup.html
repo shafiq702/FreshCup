@@ -1,0 +1,75 @@
+<div id="page-container" class="bg-white">
+    <!-- Main Container -->
+    <main id="main-container" class="bg-white">
+        <!-- Content -->
+        <div class="bg-white">
+            <section class="content content-boxed">
+                <!-- Section Content -->
+                <div class="row items-push push-50-t push-30">
+                    <div class="col-md-6 col-md-offset-3">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material form-material-success">
+                                        <input class="form-control" type="text" id="frontend-signup-username" name="frontend-signup-username" placeholder="Please enter First Name" ng-model="user.firstName">
+                                        <label for="frontend-signup-username">First Name</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material form-material-success">
+                                        <input class="form-control" type="text" id="frontend-signup-username" name="frontend-signup-username" placeholder="Please enter Last Name" ng-model="user.lastName">
+                                        <label for="frontend-signup-username">Last Name</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material form-material-success">
+                                        <input class="form-control" type="email" id="frontend-signup-email" name="frontend-signup-email" placeholder="Please provide your email" ng-model="user.email">
+                                        <label for="frontend-signup-email">Email</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material form-material-success">
+                                        <input class="form-control" type="password" id="frontend-signup-password" name="frontend-signup-password" placeholder="Choose a strong password.." ng-model="user.password">
+                                        <label for="frontend-signup-password">Password</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material form-material-success">
+                                        <input class="form-control" type="password" id="frontend-signup-password2" name="frontend-signup-password2" placeholder="..and confirm it" ng-model="user.confirmPassword">
+                                        <label for="frontend-signup-password2">Confirm Password</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-12">User Type</label>
+                                <div class="col-xs-12">
+                                    <select ng-model="user.userType" class="form-control" id="example-select" name="example-select" size="1">
+                                        <option value="admin">Admin</option>
+                                        <option value="operations">Operations</option>
+                                        <option value="content">Content</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-6 col-sm-offset-3">
+                                    <button class="btn btn-block btn-success" type="submit" ng-click="submitSignupForm(user)"><i class="fa fa-plus pull-right"></i> Sign Up</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- END Section Content -->
+            </section>
+        </div>
+        <!-- END Content -->
+    </main>
+    <!-- END Main Container -->
+</div>

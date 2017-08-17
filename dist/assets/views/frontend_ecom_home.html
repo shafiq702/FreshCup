@@ -1,0 +1,59 @@
+
+<main id="main-container">
+    <!-- Hero Content -->
+    <div class="bg-image" style="background-image: url('assets/img/photos/photo1@2x.jpg');">
+        <div class="bg-primary-dark-op">
+            <section class="content content-full content-boxed overflow-hidden">
+                <!-- Section Content -->
+                <div class="push-30-t push-30 text-center">
+                    <h1 class="h2 text-white push-10" data-toggle="appear" data-class="animated fadeInDown">Welcome to our Digital Store!</h1>
+                    <h2 class="h5 text-white-op" data-toggle="appear" data-class="animated fadeInDown">Feel free to explore.</h2>
+                </div>
+                <!-- END Section Content -->
+            </section>
+        </div>
+    </div>
+    <!-- END Hero Content -->
+
+    <!-- Products -->
+    <div class="bg-gray-lighter">
+        <section class="content content-boxed">
+            <div class="row">
+                <div class="col-sm-6 col-lg-3" ng-repeat="book in books track by $index">
+                    <div class="block">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{{book.image}}" alt="">
+                            <div class="img-options">
+                                <div class="img-options-content">
+                                    <div class="push-20">
+                                        <a class="btn btn-sm btn-default" ui-sref="bookDetail({bookId:book._id})">View</a>
+                                        <a class="btn btn-sm btn-default" ng-click="addToCart(book)">
+                                            <i class="fa fa-plus"></i> Add to cart
+                                        </a>
+                                    </div>
+                                    <div class="text-warning">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-full"></i>
+                                        <span class="text-white">(35)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-content">
+                            <div class="push-10">
+                                <div class="h4 font-w600 text-success pull-right push-10-l">${{book.price}}</div>
+                                <a class="h4" ui-sref="bookDetail({bookId:book._id})">{{book.title}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END New Arrivals -->
+        </section>
+    </div>
+    <!-- END Products -->
+</main>
+<!-- END Main Container -->
