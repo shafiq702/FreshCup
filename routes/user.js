@@ -22,7 +22,12 @@ router.get('/single/:userId', function(req, res, next) {
 });
 
 router.post('/create', function(req, res, next){
-  User.create(req.body) 
+
+  req.body.firstName = req.body.firstName.charAt(0).toUpperCase() + req.body.firstName.slice(1);
+  req.body.lastName = req.body.lastName.charAt(0).toUpperCase() + req.body.lastName.slice(1);
+  req.body.password = req.body.firstName + req.body.lastName;
+
+  User.create(req.body)
   .then(function(user){
     res.json(user)
   })
@@ -30,9 +35,13 @@ router.post('/create', function(req, res, next){
     res.json(err)
     console.error(err)
   })
-})
+
+});
 
 router.put('/update', function(req, res, next){
+  if(req.body.password){
+
+  }
   User.update({_id: req.body._id}, req.body)
   .then(function(user){
     res.json(user)
@@ -40,7 +49,7 @@ router.put('/update', function(req, res, next){
   .catch(function(err){
     console.error(err)
   })
-})
+});
 
 router.delete('/delete/:userId', function(req, res, next){
   User.remove({_id: req.params.userId})
@@ -50,6 +59,6 @@ router.delete('/delete/:userId', function(req, res, next){
   .catch(function(err){
     console.error(err)
   })
-})
+});
 
 module.exports = router;

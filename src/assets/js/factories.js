@@ -117,7 +117,7 @@ App.factory('userFactory', function ($http, $localStorage) {
               .then(extractData)
       },
       createUser: function (user) {
-          return $http.post('/auth/signup', user)
+          return $http.post('/user/create', user)
               .then(extractData)
               .then(setCurrentUser)
       },
@@ -126,8 +126,7 @@ App.factory('userFactory', function ($http, $localStorage) {
               .then(extractData)
       },
       deleteUser: function (userId) {
-        console.log(userId)
-          return $http.delete('/user/delete' + userId)
+          return $http.delete('/user/delete/' + userId)
               .then(extractData)
       }
   }

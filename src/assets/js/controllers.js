@@ -339,9 +339,6 @@ App.controller('AdminUpdateBooksCtrl', ['$scope', '$localStorage', '$window', 'b
 App.controller('SignupCtrl', ['$scope', '$localStorage', '$window', 'userFactory', '$state',
     function ($scope, $localStorage, $window, userFactory, $state) {
       $scope.submitSignupForm = function(user){
-        if(user.password !== $scope.user.confirmPassword){
-          return;
-        }
         userFactory.createUser(user)
         .then(function(user){
           $state.go('dashboard')
@@ -827,9 +824,17 @@ App.controller('TutorialTablesCtrl', ['$scope', '$localStorage', '$window','post
 ]);
 
 // Tables DataTables Controller
-App.controller('TablesDatatablesCtrl', ['$scope', '$localStorage', '$window','posts',
-    function ($scope, $localStorage, $window, posts) {
-      $scope.posts = posts;
+App.controller('UserTableCtrl', ['$scope', '$state', '$localStorage', '$window','users', 'userFactory',
+    function ($scope, $state, $localStorage, $window, users, userFactory) {
+      $scope.users = users;
+      $scope.removeUser = function(userId){
+        userFactory.deleteUser(userId)
+            .then(function(res){
+                if(res){
+                    $state.reload();
+                }
+            })
+      }
         // Init full DataTable, for more examples you can check out https://www.datatables.net/
         var initDataTableFull = function() {
             jQuery('.js-dataTable-full').dataTable({

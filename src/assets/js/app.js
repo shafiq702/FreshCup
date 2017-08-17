@@ -302,7 +302,7 @@ App.config(['$stateProvider', '$urlRouterProvider',
                 templateUrl: 'assets/views/frontend_signup.html',
                 controller: 'SignupCtrl',
                 data: {
-                  restricted: true
+                  restricted: false
                 },
                 resolve: {
                     deps: ['$ocLazyLoad', function($ocLazyLoad) {
@@ -871,30 +871,30 @@ App.config(['$stateProvider', '$urlRouterProvider',
             //         }
             //     }
             // })
-            // .state('tablesDatatables', {
-            //     url: '/tables/datatables',
-            //     templateUrl: 'assets/views/tables_datatables.html',
-            //     controller: 'TablesDatatablesCtrl',
-            //     data: {restricted: true},
-            //     resolve: {
-            //         deps: ['$ocLazyLoad', function($ocLazyLoad) {
-            //             return $ocLazyLoad.load({
-            //                 insertBefore: '#css-bootstrap',
-            //                 serie: true,
-            //                 files: [
-            //                     'assets/js/plugins/datatables/jquery.dataTables.min.css',
-            //                     'assets/js/plugins/datatables/jquery.dataTables.min.js'
-            //                 ]
-            //             });
-            //         }],
-            //         posts: function(blogFactory){
-            //           return blogFactory.getAllPosts()
-            //           .then(function(data){
-            //             return data
-            //           })
-            //         }
-            //     }
-            // })
+            .state('usersTable', {
+                url: '/users',
+                templateUrl: 'assets/views/tables_datatables.html',
+                controller: 'UserTableCtrl',
+                data: {restricted: true},
+                resolve: {
+                    deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            insertBefore: '#css-bootstrap',
+                            serie: true,
+                            files: [
+                                'assets/js/plugins/datatables/jquery.dataTables.min.css',
+                                'assets/js/plugins/datatables/jquery.dataTables.min.js'
+                            ]
+                        });
+                    }],
+                    users: function(userFactory){
+                      return userFactory.getAllUsers()
+                      .then(function(data){
+                        return data
+                      })
+                    }
+                }
+            })
             // .state('formsPickersMore', {
             //     url: '/forms/pickers-more',
             //     templateUrl: 'assets/views/forms_pickers_more.html',
