@@ -17,7 +17,7 @@ var passportConfig = require('./config/passport')(passport); // pass passport fo
 
 // mongoose setup
 mongoose.Promise = require('bluebird');
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/icerv');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/freshcup');
 mongoose.connection.on('error', console.error.bind(console));
 // // // body parser
 app.use(bodyParser.urlencoded({ extended: true }));
