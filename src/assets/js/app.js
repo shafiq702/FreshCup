@@ -302,7 +302,7 @@ App.config(['$stateProvider', '$urlRouterProvider',
                 templateUrl: 'assets/views/frontend_signup.html',
                 controller: 'SignupCtrl',
                 data: {
-                  restricted: false
+                  restricted: true
                 },
                 resolve: {
                     deps: ['$ocLazyLoad', function($ocLazyLoad) {
