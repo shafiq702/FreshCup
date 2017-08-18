@@ -9,7 +9,7 @@
 App.controller('DashboardCtrl', ['$scope', '$localStorage', '$window',
     function ($scope, $localStorage, $window) {
       $scope.oneui.settings.sidebarLeft = true;
-        $scope.oneui.settings.sidebarOpen = true;
+      $scope.oneui.settings.sidebarOpen = true;
       $scope.user = $localStorage.user;
       $scope.username = $localStorage.user.firstName + " " + $localStorage.user.lastName;
     }
@@ -355,6 +355,7 @@ App.controller('SignupCtrl', ['$scope', '$localStorage', '$window', 'userFactory
 
 App.controller('LoginCtrl', ['$scope', '$rootScope', '$localStorage', '$window', 'userFactory', '$state',
     function ($scope, $rootScope, $localStorage, $window, userFactory, $state) {
+    if($localStorage.user){$state.go('dashboard')}
       $scope.oneui.settings.sidebarOpen = false;
       $scope.submitLoginForm = function(user){
         userFactory.login(user)
@@ -829,14 +830,33 @@ App.controller('TutorialTablesCtrl', ['$scope', '$localStorage', '$window','post
 App.controller('UserTableCtrl', ['$scope', '$state', '$localStorage', '$window','users', 'userFactory',
     function ($scope, $state, $localStorage, $window, users, userFactory) {
       $scope.users = users;
+
       $scope.removeUser = function(userId){
-        userFactory.deleteUser(userId)
-            .then(function(res){
-                if(res){
-                    $state.reload();
-                }
-            })
-      }
+          swal({
+              title: 'Are you sure?',
+              text: 'You are about to permenantly about to delete this user!',
+              type: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#d26a5c',
+              confirmButtonText: 'Yes, delete user!',
+              html: false,
+              preConfirm: function() {
+                  // return new Promise(function (resolve) {
+                  //     setTimeout(function () {
+                  //         resolve();
+                  //     }, 50);
+                  // });
+                  return userFactory.deleteUser(userId)
+              }
+          }).then(
+              function (result) {
+                  swal('Deleted!', 'Your imaginary file has been deleted.', 'success');
+                  $state.reload();
+              }, function(dismiss) {
+                  // dismiss can be 'cancel', 'overlay', 'esc' or 'timer'
+              }
+          );
+      };
         // Init full DataTable, for more examples you can check out https://www.datatables.net/
         var initDataTableFull = function() {
             jQuery('.js-dataTable-full').dataTable({

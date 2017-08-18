@@ -100,6 +100,8 @@ module.exports = function (grunt) {
                     '<%= pathDev %>/<%= pathAssets %>/js/core/ngStorage.min.js',
                     '<%= pathDev %>/<%= pathAssets %>/js/plugin/card/jquery.card.min.js',
                     '<%= pathDev %>/<%= pathAssets %>/js/plugin/summernote/summernote.min.js',
+                    '<%= pathDev %>/<%= pathAssets %>/js/plugin/sweetalert2/es6-promise.auto.min.js',
+                    '<%= pathDev %>/<%= pathAssets %>/js/plugin/sweetalert2/sweetalert2.min.js',
                     'node_modules/marked/lib/marked.js',
                     'node_modules/angular-card/src/card.js',
                     'node_modules/angular-md/dist/angular-md.js',

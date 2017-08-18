@@ -28,11 +28,14 @@
                       <td class="text-center">{{$index+1}}</td>
                         <td class="font-w600">{{user.firstName}}</td>
                         <td class="hidden-xs">{{user.lastName}}</td>
-                        <td class="hidden-xs">{{user.userType}}</td>1
+                        <td class="hidden-xs">{{user.userType}}</td>
                         <td class="text-center">
                             <div class="btn-group">
-                                <button class="btn btn-xs btn-default" type="button" ng-click="removeUser(user._id)"><i class="fa fa-times"></i></button>
+                                <button class="js-swal-success btn btn-default" type="button" ng-click="removeUser(user._id)"><i class="fa fa-times text-danger push-5-r"></i> Delete User</button>
                             </div>
+                            <!--<div class="btn-group">-->
+                                <!--<button class="js-swal-success btn btn-default" type="button" ng-click="removeUser(user._id)"><i class="fa fa-times"></i> Delete</button>-->
+                            <!--</div>-->
                         </td>
                     </tr>
                 </tbody>

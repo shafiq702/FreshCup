@@ -780,25 +780,25 @@ App.config(['$stateProvider', '$urlRouterProvider',
             //         }]
             //     }
             // })
-            // .state('uiActivity', {
-            //     url: '/ui/activity',
-            //     templateUrl: 'assets/views/ui_activity.html',
-            //     controller: 'UiActivityCtrl',
-            //     resolve: {
-            //         deps: ['$ocLazyLoad', function($ocLazyLoad) {
-            //             return $ocLazyLoad.load({
-            //                 insertBefore: '#css-bootstrap',
-            //                 serie: true,
-            //                 files: [
-            //                     'assets/js/plugins/sweetalert2/sweetalert2.min.css',
-            //                     'assets/js/plugins/bootstrap-notify/bootstrap-notify.min.js',
-            //                     'assets/js/plugins/sweetalert2/es6-promise.auto.min.js',
-            //                     'assets/js/plugins/sweetalert2/sweetalert2.min.js'
-            //                 ]
-            //             });
-            //         }]
-            //     }
-            // })
+            .state('uiActivity', {
+                url: '/ui/activity',
+                templateUrl: 'assets/views/ui_activity.html',
+                controller: 'UiActivityCtrl',
+                resolve: {
+                    deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            insertBefore: '#css-bootstrap',
+                            serie: true,
+                            files: [
+                                'assets/js/plugins/sweetalert2/sweetalert2.min.css',
+                                'assets/js/plugins/bootstrap-notify/bootstrap-notify.min.js',
+                                'assets/js/plugins/sweetalert2/es6-promise.auto.min.js',
+                                'assets/js/plugins/sweetalert2/sweetalert2.min.js'
+                            ]
+                        });
+                    }]
+                }
+            })
             // .state('uiTabs', {
             //     url: '/ui/tabs',
             //     templateUrl: 'assets/views/ui_tabs.html'
@@ -877,7 +877,9 @@ App.config(['$stateProvider', '$urlRouterProvider',
                             serie: true,
                             files: [
                                 'assets/js/plugins/datatables/jquery.dataTables.min.css',
-                                'assets/js/plugins/datatables/jquery.dataTables.min.js'
+                                'assets/js/plugins/datatables/jquery.dataTables.min.js',
+                                'assets/js/plugins/sweetalert2/es6-promise.auto.min.js',
+                                'assets/js/plugins/sweetalert2/sweetalert2.min.js'
                             ]
                         });
                     }],
@@ -1636,8 +1638,8 @@ App.run(function($rootScope, uiHelpers, $state, userFactory, $localStorage, $win
                 $state.go('login');
                 return;
             }
-            $localStorage.user = user.user
 
+            $localStorage.user = user.user;
         })
         .catch(function (err) {
             $state.go('login');

@@ -128,7 +128,7 @@ App.directive('baseHeader', function(userFactory, $state, $rootScope, $localStor
     templateUrl: 'assets/views/partials/base_header.html',
     link: function(scope){
       var setUser = function () {
-          scope.user = $localStorage.user
+          scope.user = $localStorage.user;
       };
 
       scope.isLoggedIn = function(){
@@ -142,7 +142,7 @@ App.directive('baseHeader', function(userFactory, $state, $rootScope, $localStor
           $state.go('login')
         })
       };
-      $rootScope.$on('loginSuccess', setUser);
+      $rootScope.$on('loginSuccess', setUser)
     }
   }
 });
