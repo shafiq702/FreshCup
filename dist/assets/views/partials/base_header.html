@@ -1,59 +1,5 @@
-<header id="header-navbar" class="content-mini content-mini-full"  ng-if="!isLoggedIn()">
-    <div class="content-boxed">
-        <!-- Main Header Navigation -->
-        <ul class="nav-header pull-right ng-scope hidden-md hidden-lg">
-          <li>
-            <div class="btn-group">
-                <button class="btn btn-default btn-image dropdown-toggle" data-toggle="dropdown" type="button" aria-expanded="false">
-                    <i class="fa fa-tasks"></i>
-                </button>
-                <ul class="dropdown-menu dropdown-menu-right">
-                  <li>
-                      <a ui-sref="aboutUs" class="text-white">About Us</a>
-                  </li>
-                  <li>
-                      <a ui-sref="serviceCalendar" class="text-white">Service Calendar</a>
-                  </li>
-                    <li>
-                        <a ui-sref="newMemberRegistration" class="text-white">New Member Registration</a>
-                    </li>
-                  <li>
-                      <a ui-sref="blog" class="text-white">Blog</a>
-                  </li>
-                </ul>
-            </div>
-          </li>
-        </ul>
-        <ul class="js-nav-main-header nav-main-header pull-right">
-            <li class="text-right hidden-md hidden-lg">
-                <!-- Toggle class helper (for main header navigation in small screens), functionality initialized in App() -> uiToggleClass() -->
-                <button class="btn btn-link text-black clearfix" data-toggle="class-toggle" data-target=".js-nav-main-header" data-class="nav-main-header-o" type="button">
-                    <i class="fa fa-times"></i>
-                </button>
-            </li>
-
-            <li>
-              <button class="btn btn-info" type="button" ui-sref="login">
-                  <span class="hidden-xs">Login</span>
-              </button>
-            </li>
-        </ul>
-        <!-- END Main Header Navigation -->
-
-        <!-- Header Navigation Left -->
-        <ul class="nav-header pull-left">
-            <li class="header-content">
-                <a class="h5" ui-sref="home" >
-                    <h2>Fresh Wrap</h2>
-                </a>
-            </li>
-        </ul>
-        <!-- END Header Navigation Left -->
-    </div>
-</header>
-<!-- END Header -->
-
-<ul class="nav-header pull-right" ng-if="isLoggedIn()">
+<!-- Header Navigation Right -->
+<ul class="nav-header pull-right">
     <li>
         <div class="btn-group" data-on-toggle="toggled(open)" data-uib-dropdown>
             <button class="btn btn-default btn-image" type="button" data-uib-dropdown-toggle>
@@ -75,6 +21,31 @@
             </ul>
         </div>
     </li>
+    <li>
+        <button class="btn btn-default" type="button" data-ng-click="oneui.settings.sideOverlayOpen = ! oneui.settings.sideOverlayOpen" data-js-blur>
+            <i class="fa fa-tasks"></i>
+        </button>
+    </li>
 </ul>
 <!-- END Header Navigation Right -->
 
+<!-- Header Navigation Left -->
+<ul class="nav-header pull-left">
+    <li class="hidden-md hidden-lg">
+        <button class="btn btn-default" type="button" data-ng-click="oneui.settings.sidebarOpenXs = ! oneui.settings.sidebarOpenXs" data-js-blur>
+            <i class="fa fa-navicon"></i>
+        </button>
+    </li>
+    <li class="hidden-xs hidden-sm">
+        <button class="btn btn-default" type="button" data-ng-click="oneui.settings.sidebarMini = ! oneui.settings.sidebarMini" data-js-blur>
+            <i class="fa fa-ellipsis-v"></i>
+        </button>
+    </li>
+    <li class="visible-xs">
+        <!-- Toggle class helper (data-js-toggle-class attribute is initialized in js/directives.js) -->
+        <button class="btn btn-default" type="button" data-js-toggle-class="{target: '.js-header-search', class: 'header-search-xs-visible'}" data-js-blur>
+            <i class="fa fa-search"></i>
+        </button>
+    </li>
+</ul>
+<!-- END Header Navigation Left -->

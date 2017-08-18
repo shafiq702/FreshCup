@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6e5be7c5-0ea5-498b-ba00-c68bc98fec36" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/assets/css/oneui.min.css" afterPath="$PROJECT_DIR$/dist/assets/css/oneui.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/assets/css/themes/amethyst.min.css" afterPath="$PROJECT_DIR$/dist/assets/css/themes/amethyst.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/assets/css/themes/city.min.css" afterPath="$PROJECT_DIR$/dist/assets/css/themes/city.min.css" />
@@ -12,26 +10,12 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/assets/css/themes/modern.min.css" afterPath="$PROJECT_DIR$/dist/assets/css/themes/modern.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/assets/css/themes/smooth.min.css" afterPath="$PROJECT_DIR$/dist/assets/css/themes/smooth.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/assets/js/oneui.min.js" afterPath="$PROJECT_DIR$/dist/assets/js/oneui.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/assets/views/partials/base_footer.html" afterPath="$PROJECT_DIR$/dist/assets/views/partials/base_footer.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/assets/views/partials/base_header.html" afterPath="$PROJECT_DIR$/dist/assets/views/partials/base_header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/assets/views/partials/base_sidebar.html" afterPath="$PROJECT_DIR$/dist/assets/views/partials/base_sidebar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/assets/views/tables_datatables.html" afterPath="$PROJECT_DIR$/dist/assets/views/tables_datatables.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/index.html" afterPath="$PROJECT_DIR$/dist/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/css/oneui.css" afterPath="$PROJECT_DIR$/src/assets/css/oneui.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/css/themes/amethyst.min.css" afterPath="$PROJECT_DIR$/src/assets/css/themes/amethyst.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/css/themes/city.min.css" afterPath="$PROJECT_DIR$/src/assets/css/themes/city.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/css/themes/flat.min.css" afterPath="$PROJECT_DIR$/src/assets/css/themes/flat.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/css/themes/modern.min.css" afterPath="$PROJECT_DIR$/src/assets/css/themes/modern.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/css/themes/smooth.min.css" afterPath="$PROJECT_DIR$/src/assets/css/themes/smooth.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/js/app.js" afterPath="$PROJECT_DIR$/src/assets/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/js/controllers.js" afterPath="$PROJECT_DIR$/src/assets/js/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/js/directives.js" afterPath="$PROJECT_DIR$/src/assets/js/directives.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/views/partials/base_footer.html" afterPath="$PROJECT_DIR$/src/assets/views/partials/base_footer.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/views/partials/base_header.html" afterPath="$PROJECT_DIR$/src/assets/views/partials/base_header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/views/partials/base_sidebar.html" afterPath="$PROJECT_DIR$/src/assets/views/partials/base_sidebar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/views/tables_datatables.html" afterPath="$PROJECT_DIR$/src/assets/views/tables_datatables.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -49,86 +33,51 @@
     <favorites_list name="freshcup" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="controllers.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/assets/js/controllers.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="132">
-                  <caret line="476" column="16" lean-forward="false" selection-start-line="476" selection-start-column="16" selection-end-line="497" selection-end-column="18" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="base_header.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/assets/views/partials/base_header.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="80">
-                  <caret line="30" column="47" lean-forward="false" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/assets/js/app.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="789" column="48" lean-forward="true" selection-start-line="789" selection-start-column="48" selection-end-line="789" selection-end-column="48" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="tables_datatables.html" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/assets/views/tables_datatables.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="495">
-                  <caret line="33" column="147" lean-forward="false" selection-start-line="33" selection-start-column="147" selection-end-line="33" selection-end-column="147" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="directives.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/assets/js/directives.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="183">
-                  <caret line="130" column="42" lean-forward="false" selection-start-line="130" selection-start-column="42" selection-end-line="130" selection-end-column="42" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/assets/js/controllers.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="406">
-                  <caret line="858" column="8" lean-forward="false" selection-start-line="858" selection-start-column="8" selection-end-line="858" selection-end-column="8" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="base_header.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/assets/views/partials/base_header.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="720">
+              <caret line="48" column="9" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tables_datatables.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assets/views/tables_datatables.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="37" column="32" lean-forward="false" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="directives.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assets/js/directives.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="127">
+              <caret line="129" column="6" lean-forward="false" selection-start-line="129" selection-start-column="6" selection-end-line="144" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>f</find>
-      <find>settings</find>
-      <find>bcrypt</find>
-      <find>app.</find>
-      <find>password</find>
-      <find>console.log(</find>
-      <find>factories</find>
       <find>setting</find>
       <find>logou</find>
       <find>user</find>
@@ -139,7 +88,6 @@
       <find>freshCup</find>
       <find>app.run</find>
       <find>dashboar</find>
-      <find>login</find>
       <find>Fresh</find>
       <find>userTable</find>
       <find>js-swal</find>
@@ -152,6 +100,14 @@
       <find>uiAc</find>
       <find>$scope.test</find>
       <find>uiActivi</find>
+      <find>login</find>
+      <find>activity</find>
+      <find>notif</find>
+      <find>notify</find>
+      <find>HeaderCtrl</find>
+      <find>HeaderCtr</find>
+      <find>baseHeader</find>
+      <find>state</find>
     </findStrings>
     <replaceStrings>
       <replace>Fresh Wrap</replace>
@@ -174,7 +130,6 @@
         <option value="$PROJECT_DIR$/src/assets/views/frontend_signup.html" />
         <option value="$PROJECT_DIR$/models/user.js" />
         <option value="$PROJECT_DIR$/src/assets/js/factories.js" />
-        <option value="$PROJECT_DIR$/src/assets/views/partials/base_header.html" />
         <option value="$PROJECT_DIR$/src/assets/views/bd_settings_password.html" />
         <option value="$PROJECT_DIR$/src/assets/views/bd_settings.html" />
         <option value="$PROJECT_DIR$/src/assets/views/bd_settings_general.html" />
@@ -184,11 +139,12 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/assets/js/directives.js" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/Gruntfile.js" />
-        <option value="$PROJECT_DIR$/src/assets/js/app.js" />
-        <option value="$PROJECT_DIR$/src/assets/js/controllers.js" />
         <option value="$PROJECT_DIR$/src/assets/views/tables_datatables.html" />
+        <option value="$PROJECT_DIR$/src/assets/js/controllers.js" />
+        <option value="$PROJECT_DIR$/src/index.html" />
+        <option value="$PROJECT_DIR$/src/assets/js/app.js" />
+        <option value="$PROJECT_DIR$/src/assets/views/partials/base_header.html" />
       </list>
     </option>
   </component>
@@ -309,35 +265,36 @@
       <workItem from="1502888094593" duration="5365000" />
       <workItem from="1502998257580" duration="1167000" />
       <workItem from="1502999610835" duration="17294000" />
-      <workItem from="1503029180311" duration="4285000" />
+      <workItem from="1503029180311" duration="5172000" />
+      <workItem from="1503035275930" duration="693000" />
+      <workItem from="1503061130905" duration="1241000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31038000" />
+    <option name="totallyTimeSpent" value="33859000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="873" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="873" extended-state="0" />
     <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12083333" sideWeight="0.48609272" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug Logs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug Logs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Execute Anonymous" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22971286" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12083333" sideWeight="0.48609272" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925585" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Execute Anonymous" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22971286" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12135417" sideWeight="0.5139073" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Salesforce" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Salesforce" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925585" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -352,6 +309,14 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/assets/views/tables_datatables.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="37" lean-forward="true" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/views/partials/base_header.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="975">
@@ -372,7 +337,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1845">
           <caret line="123" column="35" lean-forward="false" selection-start-line="123" selection-start-column="35" selection-end-line="123" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -540,7 +504,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
           <caret line="58" column="36" lean-forward="false" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -648,7 +611,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33">
           <caret line="94" column="9" lean-forward="true" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -656,7 +618,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="91" column="88" lean-forward="true" selection-start-line="91" selection-start-column="88" selection-end-line="91" selection-end-column="88" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -664,54 +625,61 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="29" column="16" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/views/tables_datatables.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="32" lean-forward="false" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/views/partials/base_header.html">
+    <entry file="file://$PROJECT_DIR$/src/assets/views/ui_activity.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="30" column="47" lean-forward="false" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1083">
-          <caret line="105" column="69" lean-forward="false" selection-start-line="105" selection-start-column="39" selection-end-line="105" selection-end-column="69" />
+        <state relative-caret-position="15">
+          <caret line="68" column="14" lean-forward="false" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/js/directives.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="130" column="42" lean-forward="false" selection-start-line="130" selection-start-column="42" selection-end-line="130" selection-end-column="42" />
+        <state relative-caret-position="127">
+          <caret line="129" column="6" lean-forward="false" selection-start-line="129" selection-start-column="6" selection-end-line="144" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="789" column="48" lean-forward="true" selection-start-line="789" selection-start-column="48" selection-end-line="789" selection-end-column="48" />
+        <state relative-caret-position="590">
+          <caret line="1781" column="51" lean-forward="true" selection-start-line="1781" selection-start-column="51" selection-end-line="1781" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="476" column="16" lean-forward="false" selection-start-line="476" selection-start-column="16" selection-end-line="497" selection-end-column="18" />
+        <state relative-caret-position="203">
+          <caret line="2180" column="22" lean-forward="false" selection-start-line="2180" selection-start-column="22" selection-end-line="2180" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/views/tables_datatables.html">
+    <entry file="file://$PROJECT_DIR$/src/assets/views/partials/base_header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="147" lean-forward="false" selection-start-line="33" selection-start-column="147" selection-end-line="33" selection-end-column="147" />
+        <state relative-caret-position="720">
+          <caret line="48" column="9" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
           <folding />
         </state>
       </provider>

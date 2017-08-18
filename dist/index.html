@@ -30,6 +30,7 @@
 
         <!-- Stylesheets -->
         <link rel="stylesheet" href="assets/js/plugins/sweetalert2/sweetalert2.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/angular-toastr/dist/angular-toastr.css" />
         <!-- Web fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
         <!-- Bootstrap and OneUI CSS framework -->
@@ -56,19 +57,19 @@
           <div data-js-view-loader></div>
 
           <!-- Side Overlay-->
-          <!--<aside data-ng-include="'assets/views/partials/base_side_overlay.html'" data-ng-controller="SideOverlayCtrl" id="side-overlay"></aside>-->
+          <aside data-ng-include="'assets/views/partials/base_side_overlay.html'" data-ng-controller="SideOverlayCtrl" id="side-overlay"></aside>
 
           <!-- Sidebar -->
           <nav data-ng-include="'assets/views/partials/base_sidebar.html'" data-ng-controller="SidebarCtrl" id="sidebar"></nav>
 
           <!-- Header -->
-          <header id="header-navbar" class="content-mini content-mini-full">
-            <base-header></base-header>
-          </header>
+          <!--<header id="header-navbar" class="content-mini content-mini-full">-->
+            <!--<base-header></base-header>-->
+          <!--</header>-->
         <!--<header data-ng-include="'assets/views/partials/base_header.html'" data-ng-controller="HeaderCtrl" id="header-navbar" class="content-mini content-mini-full">-->
             <!--<base-header></base-header>-->
         <!--</header>-->
-
+        <header data-ng-include="'assets/views/partials/base_header.html'" data-ng-controller="HeaderCtrl" id="header-navbar" class="content-mini content-mini-full"></header>
           <!-- Main Container -->
         <main id="main-container" style="min-height: 471px;"><div data-ui-view></div></main>
 

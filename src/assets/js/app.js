@@ -1757,12 +1757,29 @@ App.controller('SidebarCtrl', ['$scope', '$localStorage', '$window', '$location'
 ]);
 
 // Header Controller
-App.controller('HeaderCtrl', ['$scope', '$localStorage',
-    function ($scope, $localStorage) {
+App.controller('HeaderCtrl', ['$rootScope', '$scope', '$localStorage', 'userFactory', '$state',
+    function ($rootScope, $scope, $localStorage, userFactory, $state) {
         // When view content is loaded
         $scope.$on('$includeContentLoaded', function () {
             // Transparent header functionality
             $scope.helpers.uiHandleHeader();
+
+            var setUser = function () {
+                $scope.user = $localStorage.user;
+            };
+
+            $scope.isLoggedIn = function(){
+                return Boolean(userFactory.isLoggedIn())
+            };
+
+            $scope.submitLogout = function(){
+                return userFactory.logout()
+                    .then(function(result){
+                        delete $localStorage.user;
+                        $state.go('login');
+                    })
+            };
+            $rootScope.$on('loginSuccess', setUser)
         });
     }
 ]);
