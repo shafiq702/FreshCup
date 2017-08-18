@@ -173,7 +173,6 @@ App.controller('CheckoutCtrl', ['$scope', '$localStorage', '$window', 'cartFacto
       $scope.completeOrder = function(products, user, card){
         userFactory.createUser(user)
         .then(function(user){
-          console.log(user)
           var order = {products: products, user:user.user._id}
           return orderFactory.createOrder(order)
           .then(function(order){
@@ -339,6 +338,9 @@ App.controller('AdminUpdateBooksCtrl', ['$scope', '$localStorage', '$window', 'b
 App.controller('SignupCtrl', ['$scope', '$localStorage', '$window', 'userFactory', '$state',
     function ($scope, $localStorage, $window, userFactory, $state) {
       $scope.submitSignupForm = function(user){
+        if(user.password !== $scope.user.confirmPassword){
+              return;
+        }
         userFactory.createUser(user)
         .then(function(user){
           $state.go('dashboard')
@@ -354,7 +356,6 @@ App.controller('SignupCtrl', ['$scope', '$localStorage', '$window', 'userFactory
 App.controller('LoginCtrl', ['$scope', '$rootScope', '$localStorage', '$window', 'userFactory', '$state',
     function ($scope, $rootScope, $localStorage, $window, userFactory, $state) {
       $scope.oneui.settings.sidebarOpen = false;
-      console.log($scope.oneui.settings);
       $scope.submitLoginForm = function(user){
         userFactory.login(user)
         .then(function(user){
@@ -371,20 +372,21 @@ App.controller('LoginCtrl', ['$scope', '$rootScope', '$localStorage', '$window',
 ]);
 
 // User Controller
-App.controller('UserSettingsCtrl', ['$scope', '$localStorage', '$window', 'userFactory', 'orders',
-    function ($scope, $localStorage, $window, userFactory, orders) {
-      $scope.user = $localStorage.user;
-      $scope.orders = orders;
+App.controller('UserSettingsCtrl', ['$scope', '$localStorage', '$window', 'userFactory',
+    function ($scope, $localStorage, $window, userFactory) {
+      $scope.updateUser = $localStorage.user;
+
       $scope.updateProfile = function(user){
-        if($scope.newPassword !== $scope.confirmNewPassword){
-          return;
-        } else{
-          user.password = user.newPassword
+
+          if(user.newPassword !== user.confirmNewPassword){
+              return;
+          }
+          console.log(user)
           userFactory.updateUser(user)
           .then(function(result){
-            console.log(result)
+            $scope.user = {}
+            return result;
           })
-        }
       }
     }
 ]);

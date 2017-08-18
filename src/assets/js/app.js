@@ -572,13 +572,7 @@ App.config(['$stateProvider', '$urlRouterProvider',
                                 'assets/js/plugins/chartjs/Chart.min.js'
                             ]
                         });
-                    }],
-                    orders: function(orderFactory, $localStorage){
-                      return orderFactory.getSingleUserOrder($localStorage.user._id)
-                      .then(function(orders){
-                        return orders
-                      })
-                    }
+                    }]
                 }
             })
             .state('userSettings.general', {

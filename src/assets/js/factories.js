@@ -117,7 +117,7 @@ App.factory('userFactory', function ($http, $localStorage) {
               .then(extractData)
       },
       createUser: function (user) {
-          return $http.post('/user/create', user)
+          return $http.post('/auth/signup', user)
               .then(extractData)
               .then(setCurrentUser)
       },
