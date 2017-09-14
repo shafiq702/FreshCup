@@ -1,0 +1,112 @@
+<div class="content content-boxed">
+    <div class="block">
+        <div class="bg-image" style="background-image: url('assets/img/photos/photo6@2x.jpg');">
+            <div class="block-content bg-primary-dark-op text-center overflow-hidden">
+                <div class="push-30-t push animated fadeInDown">
+                    <img class="img-avatar img-avatar96 img-avatar-thumb" src="assets/img/avatars/avatar4.jpg" alt="">
+                </div>
+                <div class="push-30 animated fadeInUp">
+                    <h2 class="h4 font-w600 text-white push-5">{{store.corpName}}</h2>
+                    <h3 class="h5 text-gray">{{store.streetAddress}}</h3>
+                    <h3 class="h5 text-gray">{{store.city}}, {{store.state}} {{store.zipcode}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-5 col-sm-push-7 col-lg-4 col-lg-push-8">
+            <div class="block">
+                <div class="block-content block-content-full text-center">
+                    <h3 class="block-title">Current Status: {{store.status}}</h3>
+                    <!--<button class="btn btn-sm btn-default"><i class="fa fa-fw fa-inbox text-info"></i> Send Message</button>-->
+                    <!--<button class="btn btn-sm btn-default"><i class="fa fa-fw fa-plus text-success"></i> Follow</button>-->
+                </div>
+            </div>
+            <div class="block block-opt-refresh-icon6">
+                <div class="block-header">
+                    <h3 class="block-title"><i class="fa fa-fw fa-user"></i> Store Manager</h3>
+                </div>
+                <div class="block-content">
+                    <ul class="nav-users push">
+                        <li>
+                            <a>
+                                <img class="img-avatar" src="assets/img/avatars/avatar13.jpg" alt="">
+                                <i class="fa fa-circle text-success"></i> {{store.ownerFirstName + " " + store.ownerLastName}}
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <img class="img-avatar" src="assets/img/avatars/avatar13.jpg" alt="">
+                                <i class="fa fa-phone text-success"></i> {{store.ownerPhoneNumber}}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block block-opt-refresh-icon6">
+                <div class="block-header">
+                    <h3 class="block-title"><i class="fa fa-fw fa-briefcase"></i> Store Information</h3>
+                </div>
+                <div class="block-content">
+                    <ul class="list list-simple list-li-clearfix">
+                        <li>
+                            <h5 class="push-10-t">Store/GHRA Number</h5>
+                            <div class="font-s13">{{store.storeNumber}}</div>
+                        </li>
+                        <li>
+                            <h5 class="push-10-t">DBA</h5>
+                            <div class="font-s13">{{store.dba}}</div>
+                        </li>
+                        <li>
+                            <h5 class="push-10-t">Phone Number</h5>
+                            <div class="font-s13">{{store.storePhoneNumber}}</div>
+                        </li>
+                        <li>
+                            <h5 class="push-10-t">Email Address</h5>
+                            <div class="font-s13">{{store.emailAddress}}</div>
+                        </li>
+                        <li>
+                            <h5 class="push-10-t">Sales Tax Id</h5>
+                            <div class="font-s13">{{store.salesTaxId}}</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-7 col-sm-pull-5 col-lg-8 col-lg-pull-4">
+            <div class="block block-opt-refresh-icon6">
+                <div class="block-header">
+                    <h3 class="block-title"><i class="fa fa-newspaper-o"></i> Comments</h3>
+                </div>
+                <div class="block-content">
+                    <div class="block block-transparent pull-r-l" ng-repeat="comment in comments">
+                        <div class="block-header bg-gray-lighter">
+                            <ul class="block-options">
+                                <li>
+                                    <span><em class="text-muted">{{comment.timestamp}}</em></span>
+                                </li>
+                                <li>
+                                    <span><i class="fa fa-calendar text-primary"></i></span>
+                                </li>
+                            </ul>
+                            <h3 class="block-title">{{comment.author.firstName  + " " + comment.author.lastName}}</h3>
+                        </div>
+                        <div class="block-content">
+                            <p class="font-s13">{{comment.body}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="block-content">
+                    <div class="block block-transparent pull-r-l">
+                        <div class="block-header bg-gray-lighter">
+                            <textarea class="form-control" id="val-suggestions" name="val-suggestions" rows="10" ng-model="comment.body"></textarea>
+                        </div>
+                        <div class="block-content">
+                            <button class="btn btn-sm btn-success" type="submit" ng-click="addComment(comment)">Add Comment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

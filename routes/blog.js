@@ -6,11 +6,12 @@ var dateFormat = require('dateformat');
 /* GET all posts. */
 router.get('/all/posts', function(req, res, next) {
   Post.find({}).lean().exec()
+  .populate('User')
   .then(function(posts){
     posts = posts.map(function(post){
       post.time = dateFormat(post.time, "fullDate")
       return post
-    })
+    });
     res.json(posts)
   })
 });

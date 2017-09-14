@@ -27,27 +27,22 @@ app.use(bodyParser.json());
 app.use(session({ secret: "thisissupercool" }) || session({secret:process.env.secret})); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
-app.use(flash())
+app.use(flash());
 
 //import routes
 var auth = require('./routes/auth');
 var blog = require('./routes/blog');
 var user = require('./routes/user');
-var book = require('./routes/book');
-var course = require('./routes/course');
-var order = require('./routes/order');
-var tutorial = require('./routes/tutorial');
-var mailchimp = require('./routes/mailchimp');
+var comment = require('./routes/comment');
+var store = require('./routes/store');
+var route = require('./routes/route');
 
 //routes
 app.use('/auth', auth);
-app.use('/blog', blog);
 app.use('/user', user);
-app.use('/book', book);
-app.use('/course', course);
-app.use('/order', order);
-app.use('/tutorial', tutorial);
-app.use('/mailchimp', mailchimp);
+app.use('/comment', comment);
+app.use('/store', store);
+app.use('/route', route);
 
 // static routes
 app.use(express.static(path.join(__dirname, './node_modules/')));

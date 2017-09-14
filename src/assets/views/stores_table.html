@@ -1,0 +1,51 @@
+
+<!-- Page Content -->
+<div class="content">
+    <!-- Dynamic Table Full -->
+    <div class="block">
+        <div class="block-header">
+            <h3 class="block-title">Stores Table </h3>
+            <ul class="block-options">
+                <li>
+                    <button type="button" ui-sref="addStore"><i class="fa fa-plus"></i> Store</button>
+                </li>
+            </ul>
+        </div>
+        <div class="block-content">
+            <!-- DataTables init on table by adding .js-dataTable-full class, functionality initialized in js/controllers.js -> TablesDatatablesCtrl Controller-->
+            <table class="table table-bordered table-striped js-dataTable-full">
+                <thead>
+                    <tr>
+                        <th class="text-center"></th>
+                        <th>DBA</th>
+                        <th>Store Phone Number</th>
+                        <th>Route Number</th>
+                        <th>Sales Rep</th>
+                        <th>Days</th>
+                        <th class="text-center" style="width: 13%;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="store in stores track by $index">
+                      <td class="text-center">{{$index+1}}</td>
+                        <td ui-sref="profileStore({storeId: store._id})" class="hidden-xs">{{store.dba}}</td>
+                        <td class="hidden-xs">{{store.storePhoneNumber}}</td>
+                        <td class="hidden-xs">{{store.route.routeNumber}}</td>
+                        <td class="hidden-xs">{{store.route.salesRep.firstName + " " +store.route.salesRep.lastName}}</td>
+                        <td class="hidden-xs">{{store.route.deliveryDay}}</td>
+                        <td class="text-center">
+                            <div class="btn-group">
+                                <button class="js-swal-success btn btn-default" type="button" ng-click="removeStore(store._id)"><i class="fa fa-times text-danger push-5-r"></i></button>
+                            </div>
+                            <div class="btn-group">
+                                <button class="btn btn-default" type="button" ui-sref="updateStore({storeId: store._id})"><i class="fa fa-pencil"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- END Dynamic Table Full -->
+</div>
+<!-- END Page Content -->

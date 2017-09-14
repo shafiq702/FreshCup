@@ -1,0 +1,108 @@
+<div id="page-container" class="bg-white">
+    <!-- Main Container -->
+    <main id="main-container" class="bg-white">
+        <!-- Content -->
+        <div class="bg-white">
+            <section class="content content-boxed">
+                <!-- Section Content -->
+                <div class="row items-push push-50-t push-30">
+                    <div class="col-md-6 col-md-offset-3">
+                        <h2 class="content-heading">Route Information</h2>
+                        <br>
+                        <form class="form-horizontal push-10-t push-10" _lpchecked="1">
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material input-group">
+                                        <input class="form-control" type="text" id="register5-account" name="register5-account" placeholder="Enter route name..." ng-model="route.routeName">
+                                        <label for="register5-account">Route Name</label>
+                                        <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material input-group">
+                                        <input class="form-control" type="text" id="register5-account" name="register5-account" placeholder="Enter route number..." ng-model="route.routeNumber">
+                                        <label for="register5-account">Route Number</label>
+                                        <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material input-group">
+                                        <input class="form-control" type="text" id="register5-account" name="register5-account" placeholder="Enter total hours..." ng-model="route.totalHours">
+                                        <label for="register5-account">Total hours</label>
+                                        <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material input-group">
+                                        <input class="form-control" type="text" id="register5-account" name="register5-account" placeholder="Enter total miles..." ng-model="route.totalMiles">
+                                        <label for="register5-account">Total Miles</label>
+                                        <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material input-group">
+                                        <select name="singleSelect" ng-model="route.salesRep">
+                                            <option ng-repeat="user in users" value="{{user._id}}">{{user.firstName + " " + user.lastName}}</option>
+                                        </select>
+                                        <label for="register5-account">Sales Rep</label>
+                                        <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material input-group">
+                                        <select name="singleSelect" ng-model="route.deliveryDay">
+                                            <option value="monday">Monday</option>
+                                            <option value="tuesday">Tuesday</option>
+                                            <option value="wednesday">Wednesday</option>
+                                            <option value="thursday">Thursday</option>
+                                            <option value="friday">Friday</option>
+                                            <option value="saturday">Saturday</option>
+                                            <option value="sunday">Sunday</option>
+                                        </select>
+                                        <label for="register5-account">Delivery Day</label>
+                                        <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material input-group">
+                                        <select name="singleSelect" ng-model="route.distance">
+                                            <option value="short">Short</option>
+                                            <option value="medium">Medium</option>
+                                            <option value="long">Long</option>
+                                        </select>
+                                        <label for="register5-account">Distance</label>
+                                        <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <button ng-click="submitRouteForm(route)" ng-show="location == '/add/route'" class="btn btn-sm btn-success" type="submit"><i class="fa fa-plus push-5-r"></i> Add Route</button>
+                                    <button ng-click="submitRouteForm(route)" ng-show="location !== '/add/route'" class="btn btn-sm btn-success" type="submit"><i class="fa fa-plus push-5-r"></i> Update Route</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- END Section Content -->
+            </section>
+        </div>
+        <!-- END Content -->
+    </main>
+    <!-- END Main Container -->
+</div>

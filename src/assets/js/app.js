@@ -302,7 +302,7 @@ App.config(['$stateProvider', '$urlRouterProvider',
                 templateUrl: 'assets/views/frontend_signup.html',
                 controller: 'SignupCtrl',
                 data: {
-                  restricted: true
+                  restricted: false
                 },
                 resolve: {
                     deps: ['$ocLazyLoad', function($ocLazyLoad) {
@@ -339,6 +339,224 @@ App.config(['$stateProvider', '$urlRouterProvider',
                             ]
                         });
                     }],
+                }
+            })
+            .state('addStore', {
+                url: '/add/store',
+                templateUrl: 'assets/views/frontend_add_store.html',
+                controller: 'AddStoreCtrl',
+                data: {
+                    restricted: true
+                },
+                resolve: {
+                    deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            insertBefore: '#css-bootstrap',
+                            serie: true,
+                            files: [
+                                'assets/js/plugins/slick/slick.min.css',
+                                'assets/js/plugins/slick/slick-theme.min.css',
+                                'assets/js/plugins/slick/slick.min.js',
+                                'assets/js/plugins/chartjs/Chart.min.js'
+                            ]
+                        });
+                    }],
+                    store: function(){
+                        return {};
+                    },
+                    routes: function(routeFactory){
+                        return routeFactory.getAllRoutes()
+                            .then(function(routes){
+                                return routes
+                            })
+                    }
+                }
+            })
+            .state('updateStore', {
+                url: '/update/store/:storeId',
+                templateUrl: 'assets/views/frontend_add_store.html',
+                controller: 'AddStoreCtrl',
+                data: {
+                    restricted: true
+                },
+                resolve: {
+                    deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            insertBefore: '#css-bootstrap',
+                            serie: true,
+                            files: [
+                                'assets/js/plugins/slick/slick.min.css',
+                                'assets/js/plugins/slick/slick-theme.min.css',
+                                'assets/js/plugins/slick/slick.min.js',
+                                'assets/js/plugins/chartjs/Chart.min.js'
+                            ]
+                        });
+                    }],
+                    store: function(storeFactory,$stateParams){
+                        return storeFactory.getSingleStore($stateParams.storeId)
+                            .then(function(store){
+                                return store[0]
+                            })
+                    },
+                    routes: function(routeFactory){
+                        return routeFactory.getAllRoutes()
+                            .then(function(routes){
+                                return routes
+                            })
+                    }
+
+                }
+            })
+            .state('profileStore', {
+                url: '/store/profile/:storeId',
+                templateUrl: 'assets/views/base_pages_profile.html',
+                controller: 'profileStoreCtrl',
+                data: {
+                    restricted: true
+                },
+                resolve: {
+                    deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            insertBefore: '#css-bootstrap',
+                            serie: true,
+                            files: [
+                                'assets/js/plugins/slick/slick.min.css',
+                                'assets/js/plugins/slick/slick-theme.min.css',
+                                'assets/js/plugins/slick/slick.min.js',
+                                'assets/js/plugins/chartjs/Chart.min.js'
+                            ]
+                        });
+                    }],
+                    store: function(storeFactory,$stateParams){
+                        return storeFactory.getSingleStore($stateParams.storeId)
+                            .then(function(store){
+                                return store[0]
+                            })
+                    },
+                    comments: function(commentFactory, $stateParams){
+                        return commentFactory.getAllComments($stateParams.storeId)
+                            .then(function(comments){
+                                return comments
+                            })
+                    }
+
+                }
+            })
+            .state('storesTable', {
+                url: '/stores',
+                templateUrl: 'assets/views/stores_table.html',
+                controller: 'StoresTableCtrl',
+                data: {restricted: true},
+                resolve: {
+                    deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            insertBefore: '#css-bootstrap',
+                            serie: true,
+                            files: [
+                                'assets/js/plugins/datatables/jquery.dataTables.min.css',
+                                'assets/js/plugins/datatables/jquery.dataTables.min.js',
+                                'assets/js/plugins/sweetalert2/es6-promise.auto.min.js',
+                                'assets/js/plugins/sweetalert2/sweetalert2.min.js'
+                            ]
+                        });
+                    }],
+                    stores: function(storeFactory){
+                        return storeFactory.getAllStores()
+                            .then(function(data){
+                                return data
+                            })
+                    }
+                }
+            })
+            .state('addRoute', {
+                url: '/add/route',
+                templateUrl: 'assets/views/frontend_add_route.html',
+                controller: 'AddRouteCtrl',
+                data: {
+                    restricted: true
+                },
+                resolve: {
+                    deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            insertBefore: '#css-bootstrap',
+                            serie: true,
+                            files: [
+                                'assets/js/plugins/slick/slick.min.css',
+                                'assets/js/plugins/slick/slick-theme.min.css',
+                                'assets/js/plugins/slick/slick.min.js',
+                                'assets/js/plugins/chartjs/Chart.min.js'
+                            ]
+                        });
+                    }],
+                    route: function(){
+                        return {};
+                    },
+                    users: function(userFactory){
+                        return userFactory.getAllSalesReps()
+                            .then(function(users){
+                                return users
+                            })
+                    }
+                }
+            })
+            .state('updateRoute', {
+                url: '/update/route/:routeId',
+                templateUrl: 'assets/views/frontend_add_route.html',
+                controller: 'AddRouteCtrl',
+                data: {
+                    restricted: true
+                },
+                resolve: {
+                    deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            insertBefore: '#css-bootstrap',
+                            serie: true,
+                            files: [
+                                'assets/js/plugins/slick/slick.min.css',
+                                'assets/js/plugins/slick/slick-theme.min.css',
+                                'assets/js/plugins/slick/slick.min.js',
+                                'assets/js/plugins/chartjs/Chart.min.js'
+                            ]
+                        });
+                    }],
+                    route: function(routeFactory,$stateParams){
+                        return routeFactory.getSingleRoute($stateParams.routeId)
+                            .then(function(route){
+                                return route[0]
+                            })
+                    },
+                    users: function(userFactory){
+                        return userFactory.getAllSalesReps()
+                            .then(function(users){
+                                return users
+                            })
+                    }
+                }
+            })
+            .state('routesTable', {
+                url: '/routes',
+                templateUrl: 'assets/views/routes_table.html',
+                controller: 'RoutesTableCtrl',
+                data: {restricted: true},
+                resolve: {
+                    deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            insertBefore: '#css-bootstrap',
+                            serie: true,
+                            files: [
+                                'assets/js/plugins/datatables/jquery.dataTables.min.css',
+                                'assets/js/plugins/datatables/jquery.dataTables.min.js',
+                                'assets/js/plugins/sweetalert2/es6-promise.auto.min.js',
+                                'assets/js/plugins/sweetalert2/sweetalert2.min.js'
+                            ]
+                        });
+                    }],
+                    routes: function(routeFactory){
+                        return routeFactory.getAllRoutes()
+                            .then(function(data){
+                                return data
+                            })
+                    }
                 }
             })
             // .state('singlePost', {
@@ -619,167 +837,6 @@ App.config(['$stateProvider', '$urlRouterProvider',
                     }]
                 }
             })
-            // .state('userSettings.purchases', {
-            //     url: '/purchases',
-            //     templateUrl: 'assets/views/bd_settings_purchases.html',
-            //     controller: 'UserSettingsCtrl',
-            //     data: {
-            //       restricted: true
-            //     },
-            //     resolve: {
-            //         deps: ['$ocLazyLoad', function($ocLazyLoad) {
-            //             return $ocLazyLoad.load({
-            //                 insertBefore: '#css-bootstrap',
-            //                 serie: true,
-            //                 files: [
-            //                     'assets/js/plugins/slick/slick.min.css',
-            //                     'assets/js/plugins/slick/slick-theme.min.css',
-            //                     'assets/js/plugins/slick/slick.min.js',
-            //                     'assets/js/plugins/chartjs/Chart.min.js'
-            //                 ]
-            //             });
-            //         }]
-            //     }
-            // })
-            // .state('adminAddCourses', {
-            //     url: '/admin/add/courses',
-            //     templateUrl: 'assets/views/admin_course_add.html',
-            //     controller: 'AdminAddCoursesCtrl',
-            //     data: {
-            //       restricted: true
-            //     },
-            //     resolve: {
-            //         deps: ['$ocLazyLoad', function($ocLazyLoad) {
-            //             return $ocLazyLoad.load({
-            //                 insertBefore: '#css-bootstrap',
-            //                 serie: true,
-            //                 files: [
-            //                     'assets/js/plugins/slick/slick.min.css',
-            //                     'assets/js/plugins/slick/slick-theme.min.css',
-            //                     'assets/js/plugins/slick/slick.min.js',
-            //                     'assets/js/plugins/chartjs/Chart.min.js'
-            //                 ]
-            //             });
-            //         }]
-            //     }
-            // })
-            // .state('adminAddUnits', {
-            //     url: '/admin/add/units/:courseId',
-            //     templateUrl: 'assets/views/admin_unit_add.html',
-            //     controller: 'AdminAddUnitsCtrl',
-            //     data: {
-            //       restricted: true
-            //     },
-            //     resolve: {
-            //         deps: ['$ocLazyLoad', function($ocLazyLoad) {
-            //             return $ocLazyLoad.load({
-            //                 insertBefore: '#css-bootstrap',
-            //                 serie: true,
-            //                 files: [
-            //                     'assets/js/plugins/slick/slick.min.css',
-            //                     'assets/js/plugins/slick/slick-theme.min.css',
-            //                     'assets/js/plugins/slick/slick.min.js',
-            //                     'assets/js/plugins/chartjs/Chart.min.js'
-            //                 ]
-            //             });
-            //         }]
-            //     }
-            // })
-            // .state('adminAddLessons', {
-            //     url: '/admin/add/lessons/:unitId',
-            //     templateUrl: 'assets/views/admin_lesson_add.html',
-            //     controller: 'AdminAddLessonsCtrl',
-            //     data: {
-            //       restricted: true
-            //     },
-            //     resolve: {
-            //         deps: ['$ocLazyLoad', function($ocLazyLoad) {
-            //             return $ocLazyLoad.load({
-            //                 insertBefore: '#css-bootstrap',
-            //                 serie: true,
-            //                 files: [
-            //                     'assets/js/plugins/slick/slick.min.css',
-            //                     'assets/js/plugins/slick/slick-theme.min.css',
-            //                     'assets/js/plugins/slick/slick.min.js',
-            //                     'assets/js/plugins/chartjs/Chart.min.js'
-            //                 ]
-            //             });
-            //         }]
-            //     }
-            // })
-            // .state('adminUpdateUnits', {
-            //     url: '/admin/update/units/:unitId',
-            //     templateUrl: 'assets/views/admin_unit_update.html',
-            //     controller: 'AdminUpdateUnitsCtrl',
-            //     data: {
-            //       restricted: true
-            //     },
-            //     resolve: {
-            //         deps: ['$ocLazyLoad', function($ocLazyLoad) {
-            //             return $ocLazyLoad.load({
-            //                 insertBefore: '#css-bootstrap',
-            //                 serie: true,
-            //                 files: [
-            //                     'assets/js/plugins/slick/slick.min.css',
-            //                     'assets/js/plugins/slick/slick-theme.min.css',
-            //                     'assets/js/plugins/slick/slick.min.js',
-            //                     'assets/js/plugins/chartjs/Chart.min.js'
-            //                 ]
-            //             });
-            //         }],
-            //         unit: function(courseFactory, $stateParams){
-            //           return courseFactory.getSingleUnit($stateParams.unitId)
-            //           .then(function(unit){
-            //             return unit[0]
-            //           })
-            //         }
-            //     }
-            // })
-            // .state('adminUpdateLessons', {
-            //     url: '/admin/update/lessons/:lessonId',
-            //     templateUrl: 'assets/views/admin_lesson_update.html',
-            //     controller: 'AdminUpdateLessonsCtrl',
-            //     resolve: {
-            //         deps: ['$ocLazyLoad', function($ocLazyLoad) {
-            //             return $ocLazyLoad.load({
-            //                 insertBefore: '#css-bootstrap',
-            //                 serie: true,
-            //                 files: [
-            //                     'assets/js/plugins/slick/slick.min.css',
-            //                     'assets/js/plugins/slick/slick-theme.min.css',
-            //                     'assets/js/plugins/slick/slick.min.js',
-            //                     'assets/js/plugins/chartjs/Chart.min.js'
-            //                 ]
-            //             });
-            //         }],
-            //         lesson: function(courseFactory, $stateParams){
-            //           return courseFactory.getSingleLesson($stateParams.lessonId)
-            //           .then(function(lesson){
-            //             console.log(lesson)
-            //             return lesson[0]
-            //           })
-            //         }
-            //     }
-            // })
-            // .state('adminAddBooks', {
-            //     url: '/admin/add/books',
-            //     templateUrl: 'assets/views/admin_book_add.html',
-            //     controller: 'AdminAddBooksCtrl',
-            //     resolve: {
-            //         deps: ['$ocLazyLoad', function($ocLazyLoad) {
-            //             return $ocLazyLoad.load({
-            //                 insertBefore: '#css-bootstrap',
-            //                 serie: true,
-            //                 files: [
-            //                     'assets/js/plugins/slick/slick.min.css',
-            //                     'assets/js/plugins/slick/slick-theme.min.css',
-            //                     'assets/js/plugins/slick/slick.min.js',
-            //                     'assets/js/plugins/chartjs/Chart.min.js'
-            //                 ]
-            //             });
-            //         }]
-            //     }
-            // })
             .state('uiActivity', {
                 url: '/ui/activity',
                 templateUrl: 'assets/views/ui_activity.html',

@@ -116,6 +116,10 @@ App.factory('userFactory', function ($http, $localStorage) {
           return $http.get('/user/all/users')
               .then(extractData)
       },
+      getAllSalesReps: function () {
+          return $http.get('/user/all/salesReps')
+              .then(extractData)
+      },
       createUser: function (user) {
           return $http.post('/auth/signup', user)
               .then(extractData)
@@ -157,6 +161,93 @@ App.factory('bookFactory', function ($http) {
         },
         deleteBook: function (bookId) {
             return $http.delete('/book/delete/' + bookId)
+                .then(extractData)
+        }
+    }
+});
+
+App.factory('storeFactory', function ($http) {
+    var extractData = function (res) {
+        return res.data;
+    };
+
+    return {
+        getSingleStore: function (storeId) {
+            return $http.get('/store/single/' + storeId)
+                .then(extractData)
+        },
+        getAllStores: function () {
+            return $http.get('/store/all/stores')
+                .then(extractData)
+        },
+        createStore: function (store) {
+            return $http.post('/store/create', store)
+                .then(extractData)
+        },
+        updateStore: function (store) {
+            return $http.put('/store/update', store)
+                .then(extractData)
+        },
+        deleteStore: function (storeId) {
+            return $http.delete('/store/delete/' + storeId)
+                .then(extractData)
+        }
+    }
+});
+
+App.factory('routeFactory', function ($http) {
+    var extractData = function (res) {
+        return res.data;
+    };
+
+    return {
+        getSingleRoute: function (routeId) {
+            return $http.get('/route/single/' + routeId)
+                .then(extractData)
+        },
+        getAllRoutes: function () {
+            return $http.get('/route/all/routes')
+                .then(extractData)
+        },
+        createRoute: function (route) {
+            return $http.post('/route/create', route)
+                .then(extractData)
+        },
+        updateRoute: function (route) {
+            return $http.put('/route/update', route)
+                .then(extractData)
+        },
+        deleteRoute: function (routeId) {
+            return $http.delete('/route/delete/' + routeId)
+                .then(extractData)
+        }
+    }
+});
+
+App.factory('commentFactory', function ($http) {
+    var extractData = function (res) {
+        return res.data;
+    };
+
+    return {
+        getSingleComment: function (commentId) {
+            return $http.get('/comment/single/' + commentId)
+                .then(extractData)
+        },
+        getAllComments: function (storeId) {
+            return $http.get('/comment/all/' + storeId)
+                .then(extractData)
+        },
+        createComment: function (comment) {
+            return $http.post('/comment/create', comment)
+                .then(extractData)
+        },
+        updateComment: function (comment) {
+            return $http.put('/comment/update', comment)
+                .then(extractData)
+        },
+        deleteComment: function (commentId) {
+            return $http.delete('/comment/delete/' + commentId)
                 .then(extractData)
         }
     }

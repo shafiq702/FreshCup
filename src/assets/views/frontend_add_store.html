@@ -1,0 +1,188 @@
+<div id="page-container" class="bg-white">
+    <!-- Main Container -->
+    <main id="main-container" class="bg-white">
+        <!-- Content -->
+        <div class="bg-white">
+            <section class="content content-boxed">
+                <!-- Section Content -->
+                <div class="row items-push push-50-t push-30">
+                    <div class="col-md-6 col-md-offset-3">
+                        <h2 class="content-heading">Store Information</h2>
+                        <br>
+                        <form class="form-horizontal push-10-t push-10" _lpchecked="1">
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material input-group" ng-show="location !== '/add/store' && userType !== 'salesRep'">
+                                        <select name="singleSelect" ng-model="store.status">
+                                            <option value="active">Active</option>
+                                            <option value="inactive">Inactive</option>
+                                            <option value="pending">Pending</option>
+                                        </select>
+                                        <label for="register5-email">Status</label>
+                                        <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material input-group">
+                                        <input class="form-control" type="text" id="register5-account" name="register5-account" placeholder="Enter store/GHRA number..." ng-model="store.storeNumber">
+                                        <label for="register5-account">Store Number</label>
+                                        <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material input-group">
+                                        <input class="form-control" type="text" id="register5-account" name="register5-account" placeholder="Enter company's name..." ng-model="store.corpName">
+                                        <label for="register5-account">Corporation Name</label>
+                                        <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material input-group">
+                                        <input class="form-control" type="text" id="register5-account" name="register5-account" placeholder="Enter DBA..." ng-model="store.dba">
+                                        <label for="register5-account">DBA</label>
+                                        <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material input-group">
+                                        <input class="form-control" type="text" id="register5-account" name="register5-account" placeholder="Enter street address..." ng-model="store.streetAddress">
+                                        <label for="register5-account">Address1</label>
+                                        <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-4">
+                                    <div class="form-material">
+                                        <input class="form-control" type="text" id="register5-firstname" name="register5-firstname" placeholder="Enter City.." ng-model="store.city">
+                                        <label for="register5-firstname">City</label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="form-material">
+                                        <input class="form-control" type="text" id="register5-lastname" name="register5-lastname" placeholder="Enter State..." ng-model="store.state">
+                                        <label for="register5-lastname">State</label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="form-material">
+                                        <input class="form-control" type="text" id="register5-lastname" name="register5-lastname" placeholder="Enter Zipcode..." ng-model="store.zipcode">
+                                        <label for="register5-lastname">Zipcode</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material input-group">
+                                        <input class="form-control" type="tel" id="register5-email" name="register5-email" placeholder="Enter store's phone number.." ng-model="store.storePhoneNumber">
+                                        <label for="register5-email">Store Phone Number</label>
+                                        <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material input-group">
+                                        <input class="form-control" type="email" id="register5-email" name="register5-email" placeholder="Enter store email.." ng-model="store.emailAddress">
+                                        <label for="register5-email">Email</label>
+                                        <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material input-group">
+                                        <input class="form-control" type="text" id="register5-email" placeholder="Enter Sales Tax ID.." ng-model="store.salesTaxId">
+                                        <label>Sales Tax ID</label>
+                                        <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material input-group">
+                                        <select name="singleSelect" ng-model="store.serviceCategory">
+                                            <option value="freshCup">Fresh Cup</option>
+                                            <option value="freshWrap">Fresh Wrap</option>
+                                            <option value="both">Both</option>
+                                        </select>
+                                        <label for="register5-email">Service Category</label>
+                                        <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group" ng-show="userType !== 'salesRep'">
+                                <div class="col-xs-12">
+                                    <div class="form-material input-group">
+                                        <select name="singleSelect" ng-model="store.route">
+                                            <option ng-repeat="route in routes" value="{{route._id}}">{{route.routeNumber}}</option>
+                                        </select>
+                                        <label for="register5-email">Route Number</label>
+                                        <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <br>
+                        <h2 class="content-heading">Owner Information</h2>
+                        <br>
+                        <form class="form-horizontal push-10-t push-10" _lpchecked="1">
+                            <div class="form-group">
+                                <div class="col-xs-6">
+                                    <div class="form-material">
+                                        <input class="form-control" type="text" id="register5-firstname" name="register5-firstname" placeholder="Enter owner's first name.." ng-model="store.ownerFirstName">
+                                        <label for="register5-firstname">Owner's First Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-material">
+                                        <input class="form-control" type="text" id="register5-lastname" name="register5-lastname" placeholder="Enter owner's last name..." ng-model="store.ownerLastName">
+                                        <label for="register5-lastname">Owner's Last Name</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material input-group">
+                                        <input class="form-control" type="tel" id="register5-email" name="register5-email" placeholder="Enter owner's phone number.." ng-model="store.ownerPhoneNumber">
+                                        <label for="register5-email">Owner's Phone Number</label>
+                                        <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material input-group">
+                                        <input class="form-control" type="email" id="register5-email" name="register5-email" placeholder="Enter store email.." ng-model="store.ownerEmailAddress">
+                                        <label for="register5-email">Email</label>
+                                        <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <button ng-click="submitStoreForm(store)" ng-show="location == '/add/store'" class="btn btn-sm btn-success" type="submit"><i class="fa fa-plus push-5-r"></i> Add Store</button>
+                                    <button ng-click="submitStoreForm(store)" ng-show="location !== '/add/store'" class="btn btn-sm btn-success" type="submit"><i class="fa fa-plus push-5-r"></i> Update Store</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- END Section Content -->
+            </section>
+        </div>
+        <!-- END Content -->
+    </main>
+    <!-- END Main Container -->
+</div>

@@ -2,12 +2,21 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/user').User;
 var bcrypt = require('bcrypt-nodejs');
+
+
 /* GET all users. */
 router.get('/all/users', function(req, res, next) {
   User.find({}).lean().exec()
   .then(function(users){
     res.json(users)
   })
+});
+
+router.get('/all/salesReps', function(req, res, next) {
+    User.find({userType: 'salesRep'}).lean().exec()
+        .then(function(salesReps){
+            res.json(salesReps)
+        })
 });
 
 /* GET single users. */

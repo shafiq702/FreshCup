@@ -334,7 +334,7 @@ App.controller('AdminUpdateBooksCtrl', ['$scope', '$localStorage', '$window', 'b
     }
 ]);
 
-// Blog Controller
+// Signup User
 App.controller('SignupCtrl', ['$scope', '$localStorage', '$window', 'userFactory', '$state',
     function ($scope, $localStorage, $window, userFactory, $state) {
       $scope.submitSignupForm = function(user){
@@ -382,13 +382,92 @@ App.controller('UserSettingsCtrl', ['$scope', '$localStorage', '$window', 'userF
           if(user.newPassword !== user.confirmNewPassword){
               return;
           }
-          console.log(user)
           userFactory.updateUser(user)
           .then(function(result){
-            $scope.user = {}
+            $scope.user = {};
             return result;
           })
       }
+    }
+]);
+
+App.controller('AddRouteCtrl', ['$scope', '$localStorage','$location','$window','routeFactory','$state','route','users',
+    function ($scope, $localStorage,$location,$window,routeFactory,$state,route,users) {
+        $scope.location = $location.$$path;
+        $scope.route = route;
+        $scope.users = users;
+        $scope.submitRouteForm = function(route){
+            if($location.$$path == '/add/route'){
+                routeFactory.createRoute(route)
+                    .then(function(route){
+                        $state.go('routesTable')
+                        $scope.route = {};
+                        return route
+                    })
+                    .catch(function(err){
+                        return err
+                    })
+            } else {
+                routeFactory.updateRoute(route)
+                    .then(function(result){
+                        $scope.route = {};
+                        $state.go('routesTable')
+                        return store
+                    })
+                    .catch(function(err){
+                        return err
+                    });
+            }
+        };
+    }
+]);
+
+App.controller('AddStoreCtrl', ['$scope', '$localStorage','$location','$window','storeFactory','$state','store','routes',
+    function ($scope, $localStorage,$location,$window,storeFactory,$state,store,routes) {
+            $scope.location = $location.$$path;
+            $scope.store = store;
+            $scope.routes = routes;
+            $scope.submitStoreForm = function(store){
+                if($location.$$path == '/add/store'){
+                    storeFactory.createStore(store)
+                        .then(function(store){
+                            $state.go('storesTable')
+                            $scope.store = {};
+                            return store
+                        })
+                        .catch(function(err){
+                            return err
+                        })
+                } else {
+                    storeFactory.updateStore(store)
+                        .then(function(result){
+                            $scope.store = {};
+                            $state.go('storesTable')
+                            return store
+                        })
+                        .catch(function(err){
+                            return err
+                        });
+                    }
+            };
+    }
+]);
+
+App.controller('profileStoreCtrl', ['$scope', '$localStorage','$location', '$window', 'commentFactory', '$state', 'store', 'comments',
+    function ($scope, $localStorage,$location, $window, commentFactory, $state, store, comments) {
+        $scope.store = store;
+        $scope.comments = comments[0];
+        $scope.addComment = function (comment) {
+            comment.author = $localStorage.user._id;
+            comment.store = store._id;
+            commentFactory.createComment(comment)
+                .then(function(res){
+                    $state.reload()
+                })
+                .catch(function(err){
+                    console.log(err)
+                })
+        }
     }
 ]);
 
@@ -1022,6 +1101,400 @@ App.controller('UserTableCtrl', ['$scope', '$state', '$localStorage', '$window',
         bsDataTables();
         setTimeout(function(){
           initDataTableFull();
+        }, 0);
+
+    }
+]);
+
+// Tables DataTables Controller
+App.controller('StoresTableCtrl', ['$scope', '$state', '$localStorage','$location', '$window','stores', 'storeFactory',
+    function ($scope, $state, $localStorage,$location, $window, stores, storeFactory) {
+        $scope.stores = stores;
+        $scope.removeStore = function(storeId){
+            swal({
+                title: 'Are you sure?',
+                text: 'You are about to permenantly about to delete this store!',
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d26a5c',
+                confirmButtonText: 'Yes, delete store!',
+                html: false,
+                preConfirm: function() {
+                    return storeFactory.deleteStore(storeId)
+                }
+            }).then(
+                function (result) {
+                    if(result){
+                        swal('Deleted!', 'Your imaginary file has been deleted.', 'success');
+                        $state.reload();
+                    }
+                }, function(dismiss) {
+                    // dismiss can be 'cancel', 'overlay', 'esc' or 'timer'
+                }
+            );
+        };
+        // Init full DataTable, for more examples you can check out https://www.datatables.net/
+        var initDataTableFull = function() {
+            jQuery('.js-dataTable-full').dataTable({
+                columnDefs: [ { orderable: false, targets: [ 4 ] } ],
+                pageLength: 10,
+                lengthMenu: [[5, 10, 15, 20], [5, 10, 15, 20]]
+            });
+        };
+
+        // DataTables Bootstrap integration
+        var bsDataTables = function() {
+            var DataTable = jQuery.fn.dataTable;
+
+            // Set the defaults for DataTables init
+            jQuery.extend( true, DataTable.defaults, {
+                dom:
+                "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
+                "<'row'<'col-sm-12'tr>>" +
+                "<'row'<'col-sm-6'i><'col-sm-6'p>>",
+                renderer: 'bootstrap',
+                oLanguage: {
+                    sLengthMenu: "_MENU_",
+                    sInfo: "Showing <strong>_START_</strong>-<strong>_END_</strong> of <strong>_TOTAL_</strong>",
+                    oPaginate: {
+                        sPrevious: '<i class="fa fa-angle-left"></i>',
+                        sNext: '<i class="fa fa-angle-right"></i>'
+                    }
+                }
+            });
+
+            // Default class modification
+            jQuery.extend(DataTable.ext.classes, {
+                sWrapper: "dataTables_wrapper form-inline dt-bootstrap",
+                sFilterInput: "form-control",
+                sLengthSelect: "form-control"
+            });
+
+            // Bootstrap paging button renderer
+            DataTable.ext.renderer.pageButton.bootstrap = function (settings, host, idx, buttons, page, pages) {
+                var api     = new DataTable.Api(settings);
+                var classes = settings.oClasses;
+                var lang    = settings.oLanguage.oPaginate;
+                var btnDisplay, btnClass;
+
+                var attach = function (container, buttons) {
+                    var i, ien, node, button;
+                    var clickHandler = function (e) {
+                        e.preventDefault();
+                        if (!jQuery(e.currentTarget).hasClass('disabled')) {
+                            api.page(e.data.action).draw(false);
+                        }
+                    };
+
+                    for (i = 0, ien = buttons.length; i < ien; i++) {
+                        button = buttons[i];
+
+                        if (jQuery.isArray(button)) {
+                            attach(container, button);
+                        }
+                        else {
+                            btnDisplay = '';
+                            btnClass = '';
+
+                            switch (button) {
+                                case 'ellipsis':
+                                    btnDisplay = '&hellip;';
+                                    btnClass = 'disabled';
+                                    break;
+
+                                case 'first':
+                                    btnDisplay = lang.sFirst;
+                                    btnClass = button + (page > 0 ? '' : ' disabled');
+                                    break;
+
+                                case 'previous':
+                                    btnDisplay = lang.sPrevious;
+                                    btnClass = button + (page > 0 ? '' : ' disabled');
+                                    break;
+
+                                case 'next':
+                                    btnDisplay = lang.sNext;
+                                    btnClass = button + (page < pages - 1 ? '' : ' disabled');
+                                    break;
+
+                                case 'last':
+                                    btnDisplay = lang.sLast;
+                                    btnClass = button + (page < pages - 1 ? '' : ' disabled');
+                                    break;
+
+                                default:
+                                    btnDisplay = button + 1;
+                                    btnClass = page === button ?
+                                        'active' : '';
+                                    break;
+                            }
+
+                            if (btnDisplay) {
+                                node = jQuery('<li>', {
+                                    'class': classes.sPageButton + ' ' + btnClass,
+                                    'aria-controls': settings.sTableId,
+                                    'tabindex': settings.iTabIndex,
+                                    'id': idx === 0 && typeof button === 'string' ?
+                                        settings.sTableId + '_' + button :
+                                        null
+                                })
+                                    .append(jQuery('<a>', {
+                                            'href': '#'
+                                        })
+                                            .html(btnDisplay)
+                                    )
+                                    .appendTo(container);
+
+                                settings.oApi._fnBindAction(
+                                    node, {action: button}, clickHandler
+                                );
+                            }
+                        }
+                    }
+                };
+
+                attach(
+                    jQuery(host).empty().html('<ul class="pagination"/>').children('ul'),
+                    buttons
+                );
+            };
+
+            // TableTools Bootstrap compatibility - Required TableTools 2.1+
+            if (DataTable.TableTools) {
+                // Set the classes that TableTools uses to something suitable for Bootstrap
+                jQuery.extend(true, DataTable.TableTools.classes, {
+                    "container": "DTTT btn-group",
+                    "buttons": {
+                        "normal": "btn btn-default",
+                        "disabled": "disabled"
+                    },
+                    "collection": {
+                        "container": "DTTT_dropdown dropdown-menu",
+                        "buttons": {
+                            "normal": "",
+                            "disabled": "disabled"
+                        }
+                    },
+                    "print": {
+                        "info": "DTTT_print_info"
+                    },
+                    "select": {
+                        "row": "active"
+                    }
+                });
+
+                // Have the collection use a bootstrap compatible drop down
+                jQuery.extend(true, DataTable.TableTools.DEFAULTS.oTags, {
+                    "collection": {
+                        "container": "ul",
+                        "button": "li",
+                        "liner": "a"
+                    }
+                });
+            }
+        };
+
+        // Init Datatables
+        bsDataTables();
+        setTimeout(function(){
+            initDataTableFull();
+        }, 0);
+
+    }
+]);
+
+App.controller('RoutesTableCtrl', ['$scope', '$state', '$localStorage','$location', '$window','routes', 'routeFactory',
+    function ($scope, $state, $localStorage,$location, $window, routes, routeFactory) {
+        $scope.routes = routes;
+        console.log(routes)
+        $scope.removeRoute = function(routeId){
+            swal({
+                title: 'Are you sure?',
+                text: 'You are about to permenantly about to delete this route!',
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d26a5c',
+                confirmButtonText: 'Yes, delete store!',
+                html: false,
+                preConfirm: function() {
+                    return storeFactory.deleteStore(storeId)
+                }
+            }).then(
+                function (result) {
+                    if(result){
+                        swal('Deleted!', 'Your imaginary file has been deleted.', 'success');
+                        $state.reload();
+                    }
+                }, function(dismiss) {
+                    // dismiss can be 'cancel', 'overlay', 'esc' or 'timer'
+                }
+            );
+        };
+        // Init full DataTable, for more examples you can check out https://www.datatables.net/
+        var initDataTableFull = function() {
+            jQuery('.js-dataTable-full').dataTable({
+                columnDefs: [ { orderable: false, targets: [ 4 ] } ],
+                pageLength: 10,
+                lengthMenu: [[5, 10, 15, 20], [5, 10, 15, 20]]
+            });
+        };
+
+        // DataTables Bootstrap integration
+        var bsDataTables = function() {
+            var DataTable = jQuery.fn.dataTable;
+
+            // Set the defaults for DataTables init
+            jQuery.extend( true, DataTable.defaults, {
+                dom:
+                "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
+                "<'row'<'col-sm-12'tr>>" +
+                "<'row'<'col-sm-6'i><'col-sm-6'p>>",
+                renderer: 'bootstrap',
+                oLanguage: {
+                    sLengthMenu: "_MENU_",
+                    sInfo: "Showing <strong>_START_</strong>-<strong>_END_</strong> of <strong>_TOTAL_</strong>",
+                    oPaginate: {
+                        sPrevious: '<i class="fa fa-angle-left"></i>',
+                        sNext: '<i class="fa fa-angle-right"></i>'
+                    }
+                }
+            });
+
+            // Default class modification
+            jQuery.extend(DataTable.ext.classes, {
+                sWrapper: "dataTables_wrapper form-inline dt-bootstrap",
+                sFilterInput: "form-control",
+                sLengthSelect: "form-control"
+            });
+
+            // Bootstrap paging button renderer
+            DataTable.ext.renderer.pageButton.bootstrap = function (settings, host, idx, buttons, page, pages) {
+                var api     = new DataTable.Api(settings);
+                var classes = settings.oClasses;
+                var lang    = settings.oLanguage.oPaginate;
+                var btnDisplay, btnClass;
+
+                var attach = function (container, buttons) {
+                    var i, ien, node, button;
+                    var clickHandler = function (e) {
+                        e.preventDefault();
+                        if (!jQuery(e.currentTarget).hasClass('disabled')) {
+                            api.page(e.data.action).draw(false);
+                        }
+                    };
+
+                    for (i = 0, ien = buttons.length; i < ien; i++) {
+                        button = buttons[i];
+
+                        if (jQuery.isArray(button)) {
+                            attach(container, button);
+                        }
+                        else {
+                            btnDisplay = '';
+                            btnClass = '';
+
+                            switch (button) {
+                                case 'ellipsis':
+                                    btnDisplay = '&hellip;';
+                                    btnClass = 'disabled';
+                                    break;
+
+                                case 'first':
+                                    btnDisplay = lang.sFirst;
+                                    btnClass = button + (page > 0 ? '' : ' disabled');
+                                    break;
+
+                                case 'previous':
+                                    btnDisplay = lang.sPrevious;
+                                    btnClass = button + (page > 0 ? '' : ' disabled');
+                                    break;
+
+                                case 'next':
+                                    btnDisplay = lang.sNext;
+                                    btnClass = button + (page < pages - 1 ? '' : ' disabled');
+                                    break;
+
+                                case 'last':
+                                    btnDisplay = lang.sLast;
+                                    btnClass = button + (page < pages - 1 ? '' : ' disabled');
+                                    break;
+
+                                default:
+                                    btnDisplay = button + 1;
+                                    btnClass = page === button ?
+                                        'active' : '';
+                                    break;
+                            }
+
+                            if (btnDisplay) {
+                                node = jQuery('<li>', {
+                                    'class': classes.sPageButton + ' ' + btnClass,
+                                    'aria-controls': settings.sTableId,
+                                    'tabindex': settings.iTabIndex,
+                                    'id': idx === 0 && typeof button === 'string' ?
+                                        settings.sTableId + '_' + button :
+                                        null
+                                })
+                                    .append(jQuery('<a>', {
+                                            'href': '#'
+                                        })
+                                            .html(btnDisplay)
+                                    )
+                                    .appendTo(container);
+
+                                settings.oApi._fnBindAction(
+                                    node, {action: button}, clickHandler
+                                );
+                            }
+                        }
+                    }
+                };
+
+                attach(
+                    jQuery(host).empty().html('<ul class="pagination"/>').children('ul'),
+                    buttons
+                );
+            };
+
+            // TableTools Bootstrap compatibility - Required TableTools 2.1+
+            if (DataTable.TableTools) {
+                // Set the classes that TableTools uses to something suitable for Bootstrap
+                jQuery.extend(true, DataTable.TableTools.classes, {
+                    "container": "DTTT btn-group",
+                    "buttons": {
+                        "normal": "btn btn-default",
+                        "disabled": "disabled"
+                    },
+                    "collection": {
+                        "container": "DTTT_dropdown dropdown-menu",
+                        "buttons": {
+                            "normal": "",
+                            "disabled": "disabled"
+                        }
+                    },
+                    "print": {
+                        "info": "DTTT_print_info"
+                    },
+                    "select": {
+                        "row": "active"
+                    }
+                });
+
+                // Have the collection use a bootstrap compatible drop down
+                jQuery.extend(true, DataTable.TableTools.DEFAULTS.oTags, {
+                    "collection": {
+                        "container": "ul",
+                        "button": "li",
+                        "liner": "a"
+                    }
+                });
+            }
+        };
+
+        // Init Datatables
+        bsDataTables();
+        setTimeout(function(){
+            initDataTableFull();
         }, 0);
 
     }
